@@ -47,7 +47,7 @@ $(document).ready(function(){
         });
 
         try {
-            $("body select").msDropDown();
+            $("body select[id='webmenu']").msDropDown();
         } catch(e) {
             alert(e.message);
         }

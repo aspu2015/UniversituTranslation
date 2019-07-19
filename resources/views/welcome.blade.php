@@ -14,8 +14,13 @@
         <script src="https://api-maps.yandex.com/2.1/?apikey=1f0064eb-6c20-41d7-87b9-c25967a30cd1&lang=ru_RU" type="text/javascript">
         </script>
 
-        
-
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/dd.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/skin2.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/flags.css') }}" />
+        <script src="{{ asset('js/langs/jquery.dd.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/langs/jquery.dd.min.js') }}" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/dd.css') }}"/>
+        <script src="{{ asset('js/langs/translations.js')}}"></script>
 
         <!-- 16.07.2019 multiselect (checkbox) -->
         <script src="{{ asset('bootstrap-multiselect-master/docs/js/prettify.min.js')}}"></script>
@@ -74,7 +79,7 @@
                 font-size: 13px;
                 font-weight: 600;
                 letter-spacing: .1rem;
-                text-decoration: none;
+                /* text-decoration: none; */
                 text-transform: uppercase;
             }
 
@@ -89,6 +94,9 @@
     </head>
     <body>
         <script src="{{ asset('js/map/yandexMap.js')}}"></script>
+        
+        
+
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -103,18 +111,31 @@
                     @endauth
                 </div>
             @endif
+            
+            
 
             <div class="content">
                 <div class="title m-b-md">
                     Universities
                 </div>
-                
+                      
+                <div class="choose-lang-div">
+                    <p class="chooseLang" >Choose your Language: </p>
+                    <select id="webmenu"  name = "webmenu">
+                    
+                    </select>
+                </div>
+                <hr>
 
+                <div  class="links">
+                <a href="{{ url('/universitytable') }}">Список организаций</a>
+                </div>
+                <hr>
 
                 <div id="org"> Тип организации
                 <select id="organizationChoice" multiple="multiple">
                 @foreach ($organizations as $item)   
-                    <option value="{{$item->id}}"> {{$item->name}}</option>
+                    <option value="{{$item->id}}" selected="selected"> {{$item->name}}</option>
                 @endforeach
                 </select>
                 </div>
@@ -124,7 +145,7 @@
                 <div id="countrych"> Страна
                 <select id="countryChoice" multiple="multiple">
                 @foreach ($country as $item)   
-                    <option value="{{$item->id}}"> {{$item->name}}</option>
+                    <option value="{{$item->id}}" selected="selected"> {{$item->name}}</option>
                 @endforeach
                 </select>
                 </div>
@@ -139,8 +160,8 @@
 
                 <script type="text/javascript">
                 $(document).ready(function() {
-                    $('#organizationChoice').multiselect();
-                    $('#countryChoice').multiselect();
+                    $('#organizationChoice').multiselect({buttonWidth: '150px'});
+                    $('#countryChoice').multiselect({buttonWidth: '150px'});
                 });
                 </script>
 

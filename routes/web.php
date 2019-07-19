@@ -67,3 +67,10 @@ Route::get('/', 'UniversityController@getData')->name('UniversityController.getD
 
 Route::get('/universitytable', 'UniversityTableController@index')->name('UniversityTableController.index');
 Route::get('/tableuniversity/data', 'UniversityTableController@getData')->name('getData');
+
+Route::get('/info_translation', 'InfoTranslationController@index');
+Route::get('/info_translation/create','InfoTranslationController@create');
+Route::post('/info_translation/store','InfoTranslationController@store');
+Route::get('/info_translation/{id}/edit','InfoTranslationController@edit');
+Route::post('/info_translation/{id}/update','InfoTranslationController@update');
+Route::post('/info_translation/{id}/destroy','InfoTranslationController@destroy');

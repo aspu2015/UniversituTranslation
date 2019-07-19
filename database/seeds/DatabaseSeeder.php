@@ -55,5 +55,9 @@ class DatabaseSeeder extends Seeder
         DB::table('countries')->insert([
             'name'=>'Франция',
         ]);
+
+        DB::table('info_category')->insert([
+            'name'=>'main'
+        ]);
     }
 }
