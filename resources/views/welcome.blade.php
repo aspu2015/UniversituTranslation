@@ -93,6 +93,7 @@
         </style>
     </head>
     <body>
+        <script src="{{ asset('js/langs/info_translations.js')}}"></script>
         <script src="{{ asset('js/map/yandexMap.js')}}"></script>
         
         
@@ -118,7 +119,8 @@
                 <div class="title m-b-md">
                     Universities
                 </div>
-                      
+                
+
                 <div class="choose-lang-div">
                     <p class="chooseLang" >Choose your Language: </p>
                     <select id="webmenu"  name = "webmenu">
@@ -127,10 +129,10 @@
                 </div>
                 <hr>
 
-                <div  class="links">
                 <a href="{{ url('/universitytable') }}">Список организаций</a>
-                </div>
                 <hr>
+
+                <div id="textBody"></div>
 
                 <div id="org"> Тип организации
                 <select id="organizationChoice" multiple="multiple">
@@ -156,7 +158,6 @@
 
                 <div id="map" style="width: 600px; height: 400px"></div>
                 
-
 
                 <script type="text/javascript">
                 $(document).ready(function() {

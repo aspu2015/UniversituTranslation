@@ -26,6 +26,6 @@ class InfoCategory extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('info_category');
+        Schema::dropIfExists('info_category');   
     }
 }

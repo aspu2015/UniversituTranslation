@@ -16,8 +16,11 @@ class InfoTranslation extends Migration
         Schema::create('info_translation', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('category_id');
+            //$table->foreign('university_id')->references('id')->on('universities');
             $table->integer('language_id');
-            $table->longText('name');
+            //$table->foreign('language_id')->references('id')->on('languages');
+            $table->integer('section_id');
+            $table->string('info_url');
             $table->longText('text');
             $table->timestamps();
         });
