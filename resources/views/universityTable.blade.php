@@ -26,35 +26,51 @@
     <link href="{{ asset('bootstrap-multiselect-master/docs/css/prettify.min.css')}}" rel="stylesheet">
     <link href="{{ asset('bootstrap-multiselect-master/dist/css/bootstrap-multiselect.css')}}" rel="stylesheet">
     <link href="{{ asset('bootstrap-multiselect-master/docs/css/bootstrap-3.3.2.min.css')}}" rel="stylesheet">
+
+    <!-- <msdropdown> -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/dd.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/skin2.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/flags.css') }}" />
+    <script src="{{ asset('js/langs/jquery.dd.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/langs/jquery.dd.min.js') }}" type="text/javascript"></script>
+    <!-- </msdropdown> -->
+
+    <script src="{{ asset('js/langs/translations.js')}}"></script>
+
     
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+            <a class="navbar-brand" href="{{ url('/') }}">
                     Главная
-                </a>
-                
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            </a>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
+                <div class="choose-lang-div">
+                    <p class="chooseLang" >Choose your Language: </p>
+                    <select id="webmenu"  name = "webmenu">
+                    
+                    </select>
                 </div>
+            </div>
             </div>
         </nav>
 
         <main class="py-4">
         <div class="container">
-    <div class="row justify-content-center">
+        <div class="row justify-content-center">
         <div class="col-md-8">
+
+        <div id="textBody" class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{!! session('status') !!}}
+                        </div>
+                    @endif
+
+
+                </div>
             <div class="card">
                 <div class="card-header">Университеты:</div>
 

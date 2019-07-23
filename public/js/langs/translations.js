@@ -13,6 +13,7 @@ function findGetParameter(parameterName) {
 }
 
 function onOptionClick(langName){
+    console.log(1);
     for(var i =0; i < langs.length; i++){
         let obj = langs[i];
         if(obj.langName == langName){
@@ -47,7 +48,7 @@ $(document).ready(function(){
         });
 
         try {
-            $("body select").msDropDown();
+            $("body select[id='webmenu']").msDropDown();
         } catch(e) {
             alert(e.message);
         }

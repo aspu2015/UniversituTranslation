@@ -80,21 +80,35 @@
                 font-size: 13px;
                 font-weight: 600;
                 letter-spacing: .1rem;
-                text-decoration: none;
+                /* text-decoration: none; */
                 text-transform: uppercase;
             }
 
             .m-b-md {
                 margin-bottom: 30px;
             }
-            .myhr {
-                size: 2px;
-                color: #ff6b6f;
+
+            #langs div {
+                display: inline-block;
+                padding-right: 10px;
+                padding-left: 10px;
+                font-size: 18px;
+                cursor: pointer;
             }
+
+            #langs div img {
+                padding-left: 5px;
+                padding-right: 5px;
+            }          
+
         </style>
     </head>
     <body>
+        <script src="{{ asset('js/langs/info_translations.js')}}"></script>
         <script src="{{ asset('js/map/yandexMap.js')}}"></script>
+        
+        
+
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -109,6 +123,8 @@
                     @endauth
                 </div>
             @endif
+            
+            
 
             <div class="content">
                 <div class="title m-b-md">
@@ -135,7 +151,6 @@
                 @endforeach
                 </select>
                 </div>
-
                 <hr>
 
                 <div id="countrych"> Страна
@@ -145,6 +160,7 @@
                 @endforeach
                 </select>
                 </div>
+
                 <hr>
 
 
@@ -153,11 +169,10 @@
                 <div id="map" style="width: 600px; height: 400px"></div>
                 
 
-
                 <script type="text/javascript">
                 $(document).ready(function() {
-                    $('#organizationChoice').multiselect();
-                    $('#countryChoice').multiselect();
+                    $('#organizationChoice').multiselect({buttonWidth: '150px'});
+                    $('#countryChoice').multiselect({buttonWidth: '150px'});
                 });
                 </script>
 

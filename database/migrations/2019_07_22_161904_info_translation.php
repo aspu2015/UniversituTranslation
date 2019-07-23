@@ -20,6 +20,7 @@ class InfoTranslation extends Migration
             $table->integer('language_id');
             //$table->foreign('language_id')->references('id')->on('languages');
             $table->integer('section_id');
+            $table->string('info_url');
             $table->longText('text');
             $table->timestamps();
         });

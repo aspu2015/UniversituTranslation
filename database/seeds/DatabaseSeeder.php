@@ -77,29 +77,34 @@ class DatabaseSeeder extends Seeder
         DB::table('info_translation')->insert([
             'category_id'=>1,
             'language_id'=>1,
-            'section_id'=>'1',
-            'text'=>'summertime sadness ss su summertime'
+            'section_id'=>1,
+            'text'=>'summertime sadness ss su summertime',
+            'info_url'=>'/'
         ]);
 
         DB::table('info_translation')->insert([
             'category_id'=>1,
             'language_id'=>1,
-            'section_id'=>'2',
-            'text'=>'Sooooomebody ...'
+            'section_id'=>2,
+            'text'=>'Sooooomebody ...',
+            'info_url'=>'/'
         ]);
 
         DB::table('info_translation')->insert([
             'category_id'=>1,
             'language_id'=>2,
-            'section_id'=>'1',
-            'text'=>'летняя печаааааааль'
+            'section_id'=>1,
+            'text'=>'летняя печаааааааль',
+            'info_url'=>'/'
         ]);
 
         DB::table('info_translation')->insert([
             'category_id'=>1,
             'language_id'=>2,
-            'section_id'=>'2',
-            'text'=>'САААААМБАДИ ванс толд миии'
+            'section_id'=>2,
+            'text'=>'САААААМБАДИ ванс толд миии',
+            'info_url'=>'/'
         ]);
+
     }
 }

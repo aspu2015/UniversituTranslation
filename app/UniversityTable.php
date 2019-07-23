@@ -13,11 +13,6 @@ class UniversityTable extends Model
     // }
 
     public static function getAllUniversities(){
-        //return University::with('translation')->get();
-
-        // return DB::table('universities')
-        // ->join('organizations','universities.organization_id','=','organizations.id')
-        // ->get();
 
         return DB::select('select universities.name, universities.description, 
         universities.organization_id, universities.id, organizations.id, 
