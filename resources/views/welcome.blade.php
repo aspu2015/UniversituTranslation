@@ -86,10 +86,20 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
-            .myhr {
-                size: 2px;
-                color: #ff6b6f;
+
+            #langs div {
+                display: inline-block;
+                padding-right: 10px;
+                padding-left: 10px;
+                font-size: 18px;
+                cursor: pointer;
             }
+
+            #langs div img {
+                padding-left: 5px;
+                padding-right: 5px;
+            }          
+
         </style>
     </head>
     <body>
@@ -119,9 +129,10 @@
                 <div class="title m-b-md">
                     Universities
                 </div>
-                
+
 
                 <div class="choose-lang-div">
+                    <div id="langs"></div>
                     <p class="chooseLang" >Choose your Language: </p>
                     <select id="webmenu"  name = "webmenu">
                     
@@ -133,6 +144,8 @@
                 <hr>
 
                 <div id="textBody"></div>
+                <hr>
+
 
                 <div id="org"> Тип организации
                 <select id="organizationChoice" multiple="multiple">
@@ -141,7 +154,6 @@
                 @endforeach
                 </select>
                 </div>
-
                 <hr>
 
                 <div id="countrych"> Страна
@@ -151,6 +163,7 @@
                 @endforeach
                 </select>
                 </div>
+
                 <hr>
 
 
