@@ -2,8 +2,8 @@ $(document).ready(function(){
     ymaps.ready(init);
     function init () {
         var myMap = new ymaps.Map('map', {
-                center: [55.76, 37.64],
-                zoom: 10,
+                center: [41.721726, 50.825439],
+                zoom: 5,
                 controls: ['geolocationControl']
             }, {
                 searchControlProvider: 'yandex#search',
