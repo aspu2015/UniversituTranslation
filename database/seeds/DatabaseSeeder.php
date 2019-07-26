@@ -20,6 +20,17 @@ class DatabaseSeeder extends Seeder
             'langName'=>'ru',
             'picturePath'=>''
         ]);
+
+        DB::table('languages')->insert([
+            'langName'=>'az',
+            'picturePath'=>''
+        ]);
+
+        DB::table('languages')->insert([
+            'langName'=>'tk',
+            'picturePath'=>''
+        ]);
+
         //55.831903, 37.411961
         DB::table('universities')->insert([
             'name' => 'ASU',
@@ -129,6 +140,72 @@ class DatabaseSeeder extends Seeder
                продуцирует экспериментальный двойной интеграл. Интерполяция соответствует
                 анормальный детерминант.',
             'country' => 'Россия',
+            'organization' => 'Бюджетная'
+        ]);
+
+        DB::table('translations')->insert([
+            'university_id'=>99999,
+            'language_id'=>3,
+            'name'=>'Block1',
+            'shortDescription' => 'Краткое описание',
+            'text'=>
+            'Qapalı bir dəst, açıq vəziyyətdə istisna olmaqla, ənənəvi olaraq bir xətt boyunca
+             sonsuzluğa gedən bir funksiyanın trigonometrik inteqrasiyasını bərpa edir. 
+             Scalar məhsulu dolayı tamamilə konvergent seriyanı dəstəkləyir. Sonlu bir 
+             kəsilməyən bir funksiyanın ayrılmazlığı ardıcıl yaxınlaşmanın qeyri-adi metodunu
+              layihələndirir. Üstəlik, skaler məhsulu zəruri və kifayətdir. Qapalı bir dəst
+               mənasızdır. Konvergent seriya təbii logarifmi əks etdirir.',
+            'country' => 'Азербайджан',
+            'organization' => 'Бюджетная'
+        ]);
+
+        DB::table('translations')->insert([
+            'university_id'=>99999,
+            'language_id'=>3,
+            'name'=>'Block2',
+            'shortDescription' => 'Краткое описание',
+            'text'=>
+            'Çoxbucaqlı bir çox dəyişənin bir funksiyasının qrafikini tərsinə çevirir. Aksioma
+             funksional təhlilini birbaşa dəyişdirir, sonrakı hesablamalar tələbələrə sadə ev
+              tapşırığı olaraq qalacaq. Asimptot bir vektor sahəsinin rotoruna imkan verir.
+               Ümumiyyətlə, tək funksiya ortogonal determinantı dəstəkləyir.
+                Funksiyanın həddinin eksperimental ikiqat inteqral yaratması məntiqli görünür.
+                 İnterpolasiya anormal bir determinanta uyğundur.',
+            'country' => 'Туркменистан',
+            'organization' => 'Бюджетная'
+        ]);
+
+        DB::table('translations')->insert([
+            'university_id'=>99999,
+            'language_id'=>4,
+            'name'=>'Block1',
+            'shortDescription' => 'Краткое описание',
+            'text'=>
+            'Un set închis, excluzând cazul evident, restaurează în mod tradițional 
+            integralitatea trigonometrică a unei funcții care merge la infinit de-a lungul
+             unei linii, ceea ce nu este surprinzător. Produsul scalar acceptă serii indirecte
+              absolut convergente. Integralul unei funcții care are o discontinuitate finită
+               proiectează metoda anormală de aproximări succesive. Mai mult decât atât,
+                produsul scalar este necesar și suficient. Un set închis este trivial.
+                 Seria convergentă reflectă logaritmul natural.',
+            'country' => 'Туркменистан',
+            'organization' => 'Бюджетная'
+        ]);
+
+        DB::table('translations')->insert([
+            'university_id'=>99999,
+            'language_id'=>4,
+            'name'=>'Block2',
+            'shortDescription' => 'Краткое описание',
+            'text'=>
+            '
+            Polinomul inversează graficul unei funcții a mai multor variabile.
+             Axiomul modifică în mod direct analiza funcțională, iar calculele ulterioare
+              vor fi lăsate studenților ca teme de studiu simple. Asymptote permite rotorul
+               unui câmp vectorial. În general, funcția ciudată susține un determinant
+                ortogonal. Se pare logic ca limita functiei produce un integrala dubla
+                 experimentala. Interpolarea corespunde unui determinant anormal.',
+            'country' => 'Туркменистан',
             'organization' => 'Бюджетная'
         ]);
 
