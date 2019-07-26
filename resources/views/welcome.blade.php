@@ -112,7 +112,7 @@
     <body>
         <script src="{{ asset('js/map/yandexMap.js')}}"></script>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
+            <!-- @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
@@ -124,14 +124,16 @@
                         @endif
                     @endauth
                 </div>
-            @endif
+            @endif -->
 
             <div class="content">
                 <div class="title m-b-md">
-                    Мультиязычный сайт по совокупности 
+                Мультиязычный сайт для поддержки единого
+                 научно-образовательного пространства Прикаспийских регионов
+                    <!-- Мультиязычный сайт по совокупности 
                     образовательных, академических, 
                     функционально смежных для них организаций
-                    Прикаспийских и иных государств
+                    Прикаспийских и иных государств -->
                 </div>
                 
                 <div class="langs"></div>
