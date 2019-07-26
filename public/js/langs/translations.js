@@ -13,13 +13,17 @@ function findGetParameter(parameterName) {
 }
 
 function onOptionClick(langName){
-    console.log(1);
     for(var i =0; i < langs.length; i++){
         let obj = langs[i];
         if(obj.langName == langName){
             // $('#textBody').text(obj.text);
             $('#textBody').text("");
             ($('#textBody')[0]).insertAdjacentHTML('beforeend',obj.text);
+            $('#country').text("");
+            ($('#country')[0]).insertAdjacentHTML('beforeend',obj.country);
+            $('#organization').text("");
+            ($('#organization')[0]).insertAdjacentHTML('beforeend',obj.organization);
+
         }
     }
 }
@@ -48,7 +52,7 @@ $(document).ready(function(){
         });
 
         try {
-            $("body select[id='webmenu']").msDropDown();
+            $("body select").msDropDown();
         } catch(e) {
             alert(e.message);
         }

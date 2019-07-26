@@ -45,6 +45,7 @@
                 </a>
                 <div class="choose-lang-div">
                     <p class="chooseLang" >Choose your Language: </p>
+                    <!-- class="browser-default custom-select" -->
                     <select id="webmenu"  name = "webmenu">
                     
                     </select>

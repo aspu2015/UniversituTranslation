@@ -9,8 +9,6 @@ use App\Language;
 use Illuminate\Support\Facades\Auth;
 use App\Organization;
 use App\Country;
-use Route;
-use App\InfoTranslation;
 
 class UniversityController extends Controller
 {
@@ -114,17 +112,12 @@ class UniversityController extends Controller
         return redirect('/home');
     }
 
-    public function getData(Request $request){
+    public function getData(){
         $organizations = Organization::all();
         $country = Country::all();
-
-        $uri = $request->path();
-        $translations = InfoTranslation::getTranslation($uri);
-        //dd($translations);
-
         return view('/welcome',[
             'organizations' => $organizations,
-            'country' => $country,
+            'country' => $country
         ]);
     }
 }

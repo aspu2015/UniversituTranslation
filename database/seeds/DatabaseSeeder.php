@@ -34,14 +34,84 @@ class DatabaseSeeder extends Seeder
             'university_id'=>1,
             'language_id'=>1,
             'name'=>'ASU',
-            'text'=>'ASU - one of the best universities'
+            'shortDescription' => 'short description',
+            'text'=>'ASU - one of the best universities',
+            'country' => 'Russia',
+            'organization' => 'Budgetary'
         ]);
 
         DB::table('translations')->insert([
             'university_id'=>1,
             'language_id'=>2,
             'name'=>'АГУ',
-            'text'=>'АГУ- один из лучших университетов в Астрахани'
+            'shortDescription' => 'Краткое описание',
+            'text'=>'АГУ- один из лучших университетов в Астрахани',
+            'country' => 'Россия',
+            'organization' => 'Бюджетная'
+        ]);
+
+        DB::table('translations')->insert([
+            'university_id'=>99999,
+            'language_id'=>1,
+            'name'=>'Block1',
+            'shortDescription' => 'Краткое описание',
+            'text'=>
+            'The trailing set, which excludes the obvious case, traditionally restores trigonometric
+             integration from functions that go to infinity along lines, which is not surprising.
+              Scalar product supports indirect absolutely convergent series. Integral functions,
+               the presence of a finite discontinuity projects an abnormal method of successive
+                approximations. Moreover, the scalar product is necessary and sufficient.
+                 A closed set is trivial. The convergent series contains the natural logarithm.',
+            'country' => 'Россия',
+            'organization' => 'Бюджетная'
+        ]);
+
+        DB::table('translations')->insert([
+            'university_id'=>99999,
+            'language_id'=>2,
+            'name'=>'Block1',
+            'shortDescription' => 'Краткое описание',
+            'text'=>
+            'Замкнутое множество, исключая очевидный случай, традиционно восстанавливает
+             тригонометрический интеграл от функции, обращающейся в бесконечность вдоль линии,
+              что неудивительно. Скалярное произведение поддерживает косвенный абсолютно сходящийся ряд.
+               Интеграл от функции, имеющий конечный разрыв проецирует анормальный метод
+                последовательных приближений. Более того, скалярное произведение необходимо и достаточно.
+                 Замкнутое множество тривиально. Сходящийся ряд отражает натуральный логарифм.',
+            'country' => 'Россия',
+            'organization' => 'Бюджетная'
+        ]);
+
+        DB::table('translations')->insert([
+            'university_id'=>99999,
+            'language_id'=>1,
+            'name'=>'Block2',
+            'shortDescription' => 'Краткое описание',
+            'text'=>
+            'The polynomial reverses the graph of a function of many variables.
+             The axiom directly changes the functional analysis; further calculations will
+              be left to students as simple homework. Asymptote allows the rotor of a vector field.
+               In general, the odd function supports an orthogonal determinant.
+                It seems logical that the limit of the function produces an 
+                experimental double integral. Interpolation corresponds to an abnormal determinant.',
+            'country' => 'Россия',
+            'organization' => 'Бюджетная'
+        ]);
+
+        DB::table('translations')->insert([
+            'university_id'=>99999,
+            'language_id'=>2,
+            'name'=>'Block2',
+            'shortDescription' => 'Краткое описание',
+            'text'=>
+            'Полином переворачивает график функции многих переменных. Аксиома непосредственно изменяет
+            функциональный анализ, дальнейшие выкладки оставим студентам в качестве несложной
+             домашней работы. Асимптота допускает ротор векторного поля. В общем, нечетная функция
+              поддерживает ортогональный определитель. Представляется логичным, что предел функции
+               продуцирует экспериментальный двойной интеграл. Интерполяция соответствует
+                анормальный детерминант.',
+            'country' => 'Россия',
+            'organization' => 'Бюджетная'
         ]);
 
         DB::table('organizations')->insert([
@@ -77,34 +147,29 @@ class DatabaseSeeder extends Seeder
         DB::table('info_translation')->insert([
             'category_id'=>1,
             'language_id'=>1,
-            'section_id'=>1,
-            'text'=>'summertime sadness ss su summertime',
-            'info_url'=>'/'
+            'section_id'=>'1',
+            'text'=>'summertime sadness ss su summertime'
         ]);
 
         DB::table('info_translation')->insert([
             'category_id'=>1,
             'language_id'=>1,
-            'section_id'=>2,
-            'text'=>'Sooooomebody ...',
-            'info_url'=>'/'
+            'section_id'=>'2',
+            'text'=>'Sooooomebody ...'
         ]);
 
         DB::table('info_translation')->insert([
             'category_id'=>1,
             'language_id'=>2,
-            'section_id'=>1,
-            'text'=>'летняя печаааааааль',
-            'info_url'=>'/'
+            'section_id'=>'1',
+            'text'=>'летняя печаааааааль'
         ]);
 
         DB::table('info_translation')->insert([
             'category_id'=>1,
             'language_id'=>2,
-            'section_id'=>2,
-            'text'=>'САААААМБАДИ ванс толд миии',
-            'info_url'=>'/'
+            'section_id'=>'2',
+            'text'=>'САААААМБАДИ ванс толд миии'
         ]);
-
     }
 }

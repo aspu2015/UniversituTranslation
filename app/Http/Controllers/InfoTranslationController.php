@@ -27,18 +27,20 @@ class InfoTranslationController extends Controller
     }
 
     // страница «show/»
-    // public function show($id)
-    // {
-    //     $sections = InfoTranslation::getSections($id);
-    //     return view('infoTranslation.show', [
-    //         'sections' => $sections
-    //     ]);
-    // }
-
-    public function getTranslations()
+    public function show($id)
     {
-        $translations = InfoTranslation::getTranslation();
-        return json_encode($translations);       
+        $sections = InfoTranslation::getSections($id);
+        return view('infoTranslation.show', [
+            'sections' => $sections
+        ]);
+    }
+
+    public function getTranslations($id)
+    {
+        $sections = InfoTranslation::getSections($id);
+        return view('infoTranslation.show', [
+            'sections' => $sections
+        ]);
     }
 
     

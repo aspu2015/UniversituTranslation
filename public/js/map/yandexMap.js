@@ -26,7 +26,6 @@ $(document).ready(function(){
         //$('.multiselect-native-select').click(getPlaceMark); 
         /// вызов функции по клику на выпадающем меню ///   
         //$('.multiselect-native-select').click(getPlaceMark);
-        getPlaceMark();
         $('.multiselect-native-select .btn-group ul li a label input').click(getPlaceMark);
             
       
@@ -56,7 +55,6 @@ $(document).ready(function(){
             for (var i = 0; i < selectedCountry.length; i++) {
                 selectedCountryArray.push(+selectedCountry[i].value);
             }
-            
             //console.log(selectedOrgArray);
             //console.log(selectedCountryArray);
 
