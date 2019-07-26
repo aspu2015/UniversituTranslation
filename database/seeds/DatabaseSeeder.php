@@ -26,8 +26,26 @@ class DatabaseSeeder extends Seeder
             'description' => 'ASU - Astrakhan State University',
             'country_id'=>'1',
             'organization_id'=>'1',
-            'geolocationX'=>55.831903,
-            'geolocationY'=>37.411961
+            'geolocationX'=>46.377899,
+            'geolocationY'=>48.052897
+        ]);
+
+        DB::table('universities')->insert([
+            'name' => 'BSU',
+            'description' => 'BSU - Baku State University',
+            'country_id'=>'3',
+            'organization_id'=>'1',
+            'geolocationX'=>40.369263,
+            'geolocationY'=>49.830689
+        ]);
+
+        DB::table('universities')->insert([
+            'name' => 'SSU',
+            'description' => 'SSU - Serdar State University',
+            'country_id'=>'2',
+            'organization_id'=>'1',
+            'geolocationX'=>38.970695,
+            'geolocationY'=>56.246467
         ]);
 
         DB::table('translations')->insert([
@@ -127,7 +145,11 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('countries')->insert([
-            'name'=>'Франция'
+            'name'=>'Туркменистан'
+        ]);
+
+        DB::table('countries')->insert([
+            'name'=>'Азербайджан'
         ]);
 
         DB::table('info_category')->insert([
