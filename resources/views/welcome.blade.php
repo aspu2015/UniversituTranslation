@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>ASU</title>
+        <title>Multilang</title>
 
         <!-- js -->
         <script src="{{ asset('js/libs/jquery.js')}}"></script>
@@ -20,7 +20,8 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/flags.css') }}" />
         <script src="{{ asset('js/langs/jquery.dd.js') }}" type="text/javascript"></script>
         <script src="{{ asset('js/langs/jquery.dd.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('js/langs/info_translations.js')}}"></script>
+        <!-- <script src="{{ asset('js/langs/info_translations.js')}}"></script> -->
+        <script src="{{ asset('js/langs/dictionary.js')}}"></script>
 
 
         <!-- 16.07.2019 multiselect (checkbox) -->
@@ -138,7 +139,7 @@
                 
                 <div class="langs"></div>
                 <div class="choose-lang-div">
-                    <p class="chooseLang" >Choose your Language: </p>
+                    <p class="chooseLang" ><span id="chooseLang"></span></p>
                     <select id="webmenu"  name = "webmenu">
                     
                     </select>
@@ -154,7 +155,7 @@
                  </div></div></div>
                 <hr>
 
-                <div id="org"> Тип организации
+                <div id="org"><span id="orgType"></span>
                 <select id="organizationChoice" multiple="multiple">
                 @foreach ($organizations as $item)   
                     <option value="{{$item->id}}" selected="selected"> {{$item->name}}</option>
@@ -164,7 +165,7 @@
 
                 <hr>
 
-                <div id="countrych"> Страна
+                <div id="countrych"><span id="countryName"></span>
                 <select id="countryChoice" multiple="multiple">
                 @foreach ($country as $item)   
                     <option value="{{$item->id}}" selected="selected"> {{$item->name}}</option>

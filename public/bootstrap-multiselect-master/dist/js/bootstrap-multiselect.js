@@ -430,7 +430,7 @@
             preventInputChangeEvent: false,
             nonSelectedText: 'Выбрать',
             nSelectedText: 'selected',
-            allSelectedText: 'Выбраны все',
+            allSelectedText: 'Любые',
             numberDisplayed: 3,
             disableIfEmpty: false,
             disabledText: '',

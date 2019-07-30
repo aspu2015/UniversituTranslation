@@ -7,7 +7,8 @@ $(document).ready(function(){
                 controls: ['geolocationControl']
             }, {
                 searchControlProvider: 'yandex#search',
-                yandexMapDisablePoiInteractivity: true
+                yandexMapDisablePoiInteractivity: true,
+                maxZoom: 6,
             }),
 
             clusterer = new ymaps.Clusterer({
@@ -18,22 +19,50 @@ $(document).ready(function(){
                 geoObjectHideIconOnBalloonOpen: false
             });
 
+            // var script;
+            //     // Получим ссылки на элементы с тегом 'head' и id 'language'.
+            //     var head = document.getElementsByTagName('head')[0];
+            //     var select = document.getElementById('webmenu');
 
-        //$("ul li").attr("class","active");
-        //$("select option").attr("selected","selected");
+            //     select.createMap = function () {
+            //         // Получим значение выбранного языка.
+            //         var language = this.value;
+            //         console.log(language);
+            //         // Если карта уже была создана, то удалим её.
+            //         if (myMap) {
+            //             myMap.destroy();
+            //         }
+            //         // Создадим элемент 'script'.
+            //         script = document.createElement('script');
+            //         script.type = 'text/javascript';
+            //         script.charset = 'utf-8';
+            //         // Запишем ссылку на JS API Яндекс.Карт с выбранным языком в атрибут 'src'.
+            //         script.src = 'https://api-maps.yandex.ru/2.1/?onload=init_' + language + '&lang=' + language +
+            //             '_RU&ns=ymaps_' + language;
+            //         // Добавим элемент 'script' на страницу.
+            //         head.appendChild(script);
+            //         // Использование пространства имен позволяет избежать пересечения названий функций
+            //         // и прочих программных компонентов.
+            //         window['init_' + language] = function () {
+            //             init(window['ymaps_' + language]);
+            //         }
+            //     };
+            //     getPlaceMark();
+            //     //$('.multiselect-native-select .btn-group ul li a label input').click(getPlaceMark);
+            //     $('#webmenu').on('change', function() {
+            //         select.createMap();
+            //     });
+                // Назначим обработчик для события выбора языка из списка.
+                //$('.multiselect-native-select .btn-group ul li a label input').click(select.createMap);
+                //document.getElementById('webmenu').addEventListener("change", select.createMap);
+                // Создадим карту и зададим для нее язык, который был выбран по умолчанию.
+        
         getPlaceMark();
-        //getPlaceMark();
-        //$('.multiselect-native-select').click(getPlaceMark); 
-        /// вызов функции по клику на выпадающем меню ///   
-        //$('.multiselect-native-select').click(getPlaceMark);
+       
         $('.multiselect-native-select .btn-group ul li a label input').click(getPlaceMark);
-            
-      
+         
 
         function getPlaceMark() {
-
-        
-
        
 
         $.ajax({

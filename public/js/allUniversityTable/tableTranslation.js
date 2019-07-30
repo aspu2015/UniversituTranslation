@@ -13,6 +13,12 @@ function findGetParameter(parameterName) {
 }
 
 function onOptionClick(langName){
+
+    
+
+    $("#organizationChoice").empty();
+    $("#countryChoice").empty();
+
     $('table').find("tr:gt(0)").remove(); 
     var table = document.querySelector('table');
     var options = [];
@@ -21,23 +27,41 @@ function onOptionClick(langName){
 
     for(var i =0; i < langs.length; i++){
         let obj = langs[i];
+        console.log(obj);
         if(obj.langName == langName){
-            for (var j=0; j < 5; j++)
+            for (var j=0; j < 5; j++)       // WTF ?! ///////////////////////
                 if (j == 0) options.push([
                     obj.name,
-                    obj.shortDescription,
+                    //obj.shortDescription,
                     obj.organization,
-                    obj.country
+                    obj.country,
+                    '<a href="'+obj.site_URL+'">'+obj.site_URL+'</a>'
                 ]);
             
-                // $('#textBody').text(obj.text);
-            // $('td[id="tableName"]').text("");
-            // ($('td[id="tableName"]')[0]).insertAdjacentHTML('beforeend',obj.name);
         }
     }
 
+
+    var filters = [];
     //console.log(options);
     for (var i = 0; i < options.length; i++) {
+        console.log(options);
+
+        
+
+        if (!(filters.includes(options[i][1]))) {
+            $('#organizationChoice').append($('<option value="'+options[i][1]+'" selected="selected">'+options[i][1]+'</option>'));
+            filters.push(options[i][1]);
+        }
+
+        if (!(filters.includes(options[i][2]))) {
+            $('#countryChoice').append($('<option value="'+options[i][2]+'" selected="selected">'+options[i][2]+'</option>'));
+            filters.push(options[i][2]);
+        }
+
+        
+        
+
         var tr = document.createElement('tr');
         for (var j = 0; j < options[i].length; j++) {
             var td = document.createElement('td');
@@ -47,8 +71,8 @@ function onOptionClick(langName){
         table.appendChild(tr);
     }
 
-    //$('#organizationChoice').append($('<option value="'+orgName+'" selected="selected">'+orgName+'</option>'));
-    //$('#countryChoice').append($('<option value="'+countryName+'" selected="selected">'+countryName+'</option>'));
+    $('#organizationChoice').multiselect('rebuild');
+    $('#countryChoice').multiselect('rebuild');
 }
 
 
@@ -65,32 +89,23 @@ $(document).ready(function(){
         let firstValue = null;
         var names = [];
         for(var i = 0; i < translations.length; i++){
-            let orgName = translations[i].organization;
+            //let orgName = translations[i].organization;
             
             if (!(names.includes(translations[i].langName)))
             {
                 let langName = translations[i].langName;
                 let picturePath = translations[i].picturePath;
-                let orgName = translations[i].organization;
-                let countryName = translations[i].country;
+                // let orgName = translations[i].organization;
+                // let countryName = translations[i].country;
 
                 $('#webmenu').append($('<option value="'+langName+'" data-image="'+picturePath+'">'+langName+'</option>'));
-                //$('#organizationChoice').append($('<option value="'+orgName+'" selected="selected">'+orgName+'</option>'));
-                //$('#countryChoice').append($('<option value="'+countryName+'" selected="selected">'+countryName+'</option>'));
+
 
                 names.push(translations[i].langName);
                 if(firstValue == null)
                     firstValue = langName;
             }
-            
-
-            //let langName = translations[i].langName;
-            //let picturePath = translations[i].picturePath;
-            //$('#webmenu').append($('<option value="'+langName+'" data-image="'+picturePath+'">'+langName+'</option>'));
-            //$('#worganizationChoice').append($('<option value="'+orgName+'" selected="selected">'+orgName+'</option>'));
-            //$('.langs').append($('<div value="'+langName+'"><img src="'+picturePath+'">'+langName+'</div>'));    
-            //if(firstValue == null)
-               // firstValue = langName;
+        
         }
         onOptionClick(firstValue);
 
@@ -106,10 +121,6 @@ $(document).ready(function(){
             alert(e.message);
         }
 
-        // $(document).ready(function() {
-        //     $('#organizationChoice').multiselect({buttonWidth: '150px'});
-        //     $('#countryChoice').multiselect({buttonWidth: '150px'});                    
-        // });
     });
 
     

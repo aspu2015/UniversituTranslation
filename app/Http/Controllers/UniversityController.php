@@ -9,6 +9,7 @@ use App\Language;
 use Illuminate\Support\Facades\Auth;
 use App\Organization;
 use App\Country;
+use App\InfoTranslation;
 
 class UniversityController extends Controller
 {
@@ -119,6 +120,12 @@ class UniversityController extends Controller
             'organizations' => $organizations,
             'country' => $country
         ]);
+    }
+
+    public function getTranslations()
+    {
+        $dictionary = InfoTranslation::getDictionary();
+        return json_encode($dictionary);
     }
 }
 

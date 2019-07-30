@@ -12,13 +12,14 @@ class InfoTranslation extends Model
         return DB::select('select * from info_category');
     }
 
-    public static function getSections($id)
+    public static function getDictionary()
     {
-        return DB::select('select info_sections.name, info_sections.id 
-        from info_category, info_sections 
-        where info_sections.category_id = info_category.id  
-        and info_category.id = ?', [$id]);
-               //where('age', '>', 200);
+        return DB::select('select dictionary.*, 
+        languages.langName, 
+        languages.picturePath, 
+        languages.priority
+        from dictionary, languages 
+        where dictionary.language_id = languages.id');
     }
     
 }

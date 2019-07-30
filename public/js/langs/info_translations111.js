@@ -43,8 +43,14 @@ $(document).ready(function(){
             if (translations[i].name == "Block1") {
                 let langName = translations[i].langName;
                 let picturePath = translations[i].picturePath;
-                $('#webmenu').append($('<option value="'+langName+'" data-image="'+picturePath+'">'+langName+'</option>')); 
-                $('.langs').append($('<div value="'+langName+'"><img src="'+picturePath+'">'+langName+'</div>'));    
+
+                if (translations[i].priority === 1) {
+                    $('.langs').append($('<div value="'+langName+'"><img src="'+picturePath+'">'+langName+'</div>'));
+                }
+                else if (translations[i].priority === 2) {
+                    $('#webmenu').append($('<option value="'+langName+'" data-image="'+picturePath+'">'+langName+'</option>'));
+                }
+                        
                 if(firstValue == null)
                     firstValue = langName;
             }

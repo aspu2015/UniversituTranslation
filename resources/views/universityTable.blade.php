@@ -15,7 +15,7 @@
     <script src="{{ asset('js/libs/summernote.js')}}"></script>
 
 
-    <!-- <script src="{{ asset('js/allUniversityTable/filter.js')}}"></script> -->
+    <script src="{{ asset('js/allUniversityTable/filter.js')}}"></script>
     <!-- Fonts -->
     <!-- <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> -->
@@ -36,6 +36,26 @@
     <link href="{{ asset('bootstrap-multiselect-master/dist/css/bootstrap-multiselect.css')}}" rel="stylesheet">
     <link href="{{ asset('bootstrap-multiselect-master/docs/css/bootstrap-3.3.2.min.css')}}" rel="stylesheet">
     
+
+    <style>
+        .card-body div{
+            display: inline-block;
+            /* padding-bottom: 20px; */
+            margin: 5px;
+            margin-bottom: 15px;
+        }
+
+
+        /* .card-body div button{
+            margin-left: 80px;
+        } */
+
+        #filters{
+            font-weight: bold;
+        }
+
+    </style>
+
 </head>
 <body>
     <div id="app">
@@ -72,7 +92,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Университеты:</div>
+                <div class="card-header">Организации</div>
+                
 
                 <div class="card-body">
                     @if (session('status'))
@@ -83,35 +104,42 @@
 
                     <br>
 
+                    <span id="hint">Для выбора группы организаций используйте</span><br>
+                    <div id="filters">Фильтры:</div>
+                    <div id="countrych">Страна
+                        <select id="countryChoice" multiple="multiple">
+ 
+                        </select>
+                    </div>
+
+                    <div id="org">Тип организации
+                        <select id="organizationChoice" multiple="multiple">
+
+                        </select>
+                    </div>
+
+                    <div>
+                        <button class="button" id="accept">Выбрать</button>
+                    </div>
+
                     <table class="table table-bordered">
         <thead>
             <tr>
                 <th scope="col">Название</th>
-                <th scope="col">Краткое описание</th>
-                <th scope="col">Тип организации
-                    <!-- <div id="org">
-                        <select id="organizationChoice" multiple="multiple">
-                        
-                        </select>
-                    </div> -->
-                </th>
-                <th scope="col">Страна
-                    <!-- <div id="countrych">
-                        <select id="countryChoice" multiple="multiple">
-                        
-                        </select>
-                    </div> -->
-                </th>
+                <!-- <th scope="col">Краткое описание</th> -->
+                <th scope="col">Тип организации</th>
+                <th scope="col">Страна</th>
+                <th scope="col">Адрес сайта</th>
             </tr>
         </thead>
                 </table>
 
-                <!-- <script type="text/javascript">
+                <script type="text/javascript">
                 $(document).ready(function() {
                     $('#organizationChoice').multiselect({buttonWidth: '150px'});
                     $('#countryChoice').multiselect({buttonWidth: '150px'});                    
                 });
-                </script> -->
+                </script>
                     
                     
                 </div>

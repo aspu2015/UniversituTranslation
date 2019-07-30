@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLanguagesTable extends Migration
+class Dictionary extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateLanguagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('languages', function (Blueprint $table) {
+        Schema::create('dictionary', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('langName');
-            $table->string('picturePath');
-            $table->integer('priority');
-            $table->timestamps();
+            $table->integer('language_id');        
+            $table->string('name');
+            $table->text('text');
         });
     }
 
@@ -29,6 +28,6 @@ class CreateLanguagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('languages');
+        Schema::dropIfExists('dictionary');
     }
 }
