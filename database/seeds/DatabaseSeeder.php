@@ -12,28 +12,43 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+
         DB::table('languages')->insert([
-            'langName'=>'en',
-            'picturePath'=>'',
-            'priority'=>2
-        ]);
-        DB::table('languages')->insert([
-            'langName'=>'ru',
+            'langName'=>'Русский',
             'picturePath'=>'',
             'priority'=>1
         ]);
 
         DB::table('languages')->insert([
-            'langName'=>'az',
+            'langName'=>'English',
+            'picturePath'=>'',
+            'priority'=>2
+        ]);
+
+        DB::table('languages')->insert([
+            'langName'=>'Azərbaycan',
             'picturePath'=>'',
             'priority'=>1
         ]);
 
         DB::table('languages')->insert([
-            'langName'=>'tk',
+            'langName'=>'Türkmenistan',
             'picturePath'=>'',
-            'priority'=>2
+            'priority'=>1
         ]);
+
+        DB::table('languages')->insert([
+            'langName'=>'ایرانی',
+            'picturePath'=>'',
+            'priority'=>1
+        ]);
+
+        DB::table('languages')->insert([
+            'langName'=>'Қазақстан',
+            'picturePath'=>'',
+            'priority'=>1
+        ]);
+        
 
         //55.831903, 37.411961
         DB::table('universities')->insert([
@@ -65,7 +80,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('translations')->insert([
             'university_id'=>1,
-            'language_id'=>1,
+            'language_id'=>2,
             'name'=>'Astrakhan State University',
             'shortDescription' => 'short description',
             'text'=>'ASU - one of the best universities',
@@ -76,7 +91,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('translations')->insert([
             'university_id'=>1,
-            'language_id'=>2,
+            'language_id'=>1,
             'name'=>'Астраханский государственный университет',
             'shortDescription' => 'Краткое описание',
             'text'=>'АГУ- один из лучших университетов в Астрахани',
@@ -87,7 +102,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('translations')->insert([
             'university_id'=>2,
-            'language_id'=>1,
+            'language_id'=>2,
             'name'=>'Baku State University',
             'shortDescription' => 'short description',
             'text'=>'university description',
@@ -98,7 +113,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('translations')->insert([
             'university_id'=>2,
-            'language_id'=>2,
+            'language_id'=>1,
             'name'=>'Бакинский госудаственный университет',
             'shortDescription' => 'Краткое описание',
             'text'=>'описание университета',
@@ -171,43 +186,43 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('dictionary')->insert([
-            'language_id'=>1,
+            'language_id'=>2,
             'name'=>'orgType',
             'text'=>'Type of organization'
         ]);
 
         DB::table('dictionary')->insert([
-            'language_id'=>1,
+            'language_id'=>2,
             'name'=>'countryName',
             'text'=>'Country'
         ]);
 
         DB::table('dictionary')->insert([
-            'language_id'=>2,
+            'language_id'=>1,
             'name'=>'orgType',
             'text'=>'Тип организации'
         ]);
 
         DB::table('dictionary')->insert([
-            'language_id'=>2,
+            'language_id'=>1,
             'name'=>'countryName',
             'text'=>'Страна'
         ]);
 
         DB::table('dictionary')->insert([
-            'language_id'=>1,
+            'language_id'=>2,
             'name'=>'chooseLang',
             'text'=>'Language'
         ]);
 
         DB::table('dictionary')->insert([
-            'language_id'=>2,
+            'language_id'=>1,
             'name'=>'chooseLang',
-            'text'=>'Язык'
+            'text'=>'Другой язык'
         ]);
 
         DB::table('dictionary')->insert([
-            'language_id'=>1,
+            'language_id'=>2,
             'name'=>'textBody',
             'text'=>'The trailing set, which excludes the obvious case, traditionally restores trigonometric
             integration from functions that go to infinity along lines, which is not surprising.
@@ -218,7 +233,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('dictionary')->insert([
-            'language_id'=>2,
+            'language_id'=>1,
             'name'=>'textBody',
             'text'=>'Замкнутое множество, исключая очевидный случай, традиционно восстанавливает
             тригонометрический интеграл от функции, обращающейся в бесконечность вдоль линии,
@@ -229,7 +244,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('dictionary')->insert([
-            'language_id'=>1,
+            'language_id'=>2,
             'name'=>'textBody2',
             'text'=>'The polynomial reverses the graph of a function of many variables.
             The axiom directly changes the functional analysis; further calculations will
@@ -240,7 +255,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('dictionary')->insert([
-            'language_id'=>2,
+            'language_id'=>1,
             'name'=>'textBody2',
             'text'=>'Полином переворачивает график функции многих переменных. Аксиома непосредственно изменяет
             функциональный анализ, дальнейшие выкладки оставим студентам в качестве несложной
@@ -248,6 +263,30 @@ class DatabaseSeeder extends Seeder
               поддерживает ортогональный определитель. Представляется логичным, что предел функции
                продуцирует экспериментальный двойной интеграл. Интерполяция соответствует
                 анормальный детерминант.'
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>3,
+            'name'=>'textBody2',
+            'text'=>''
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>4,
+            'name'=>'textBody2',
+            'text'=>''
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>5,
+            'name'=>'textBody2',
+            'text'=>''
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>6,
+            'name'=>'textBody2',
+            'text'=>''
         ]);
 
 
