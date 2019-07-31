@@ -19,44 +19,102 @@ $(document).ready(function(){
                 geoObjectHideIconOnBalloonOpen: false
             });
 
-            // var script;
-            //     // Получим ссылки на элементы с тегом 'head' и id 'language'.
-            //     var head = document.getElementsByTagName('head')[0];
-            //     var select = document.getElementById('webmenu');
-
-            //     select.createMap = function () {
-            //         // Получим значение выбранного языка.
-            //         var language = this.value;
-            //         console.log(language);
-            //         // Если карта уже была создана, то удалим её.
-            //         if (myMap) {
-            //             myMap.destroy();
-            //         }
-            //         // Создадим элемент 'script'.
-            //         script = document.createElement('script');
-            //         script.type = 'text/javascript';
-            //         script.charset = 'utf-8';
-            //         // Запишем ссылку на JS API Яндекс.Карт с выбранным языком в атрибут 'src'.
-            //         script.src = 'https://api-maps.yandex.ru/2.1/?onload=init_' + language + '&lang=' + language +
-            //             '_RU&ns=ymaps_' + language;
-            //         // Добавим элемент 'script' на страницу.
-            //         head.appendChild(script);
-            //         // Использование пространства имен позволяет избежать пересечения названий функций
-            //         // и прочих программных компонентов.
-            //         window['init_' + language] = function () {
-            //             init(window['ymaps_' + language]);
-            //         }
-            //     };
-            //     getPlaceMark();
-            //     //$('.multiselect-native-select .btn-group ul li a label input').click(getPlaceMark);
-            //     $('#webmenu').on('change', function() {
-            //         select.createMap();
-            //     });
-                // Назначим обработчик для события выбора языка из списка.
-                //$('.multiselect-native-select .btn-group ul li a label input').click(select.createMap);
-                //document.getElementById('webmenu').addEventListener("change", select.createMap);
-                // Создадим карту и зададим для нее язык, который был выбран по умолчанию.
         
+
+            var colors = ['#F0F075', '#FB6C3F', '#3e5cad', '#49C0B5'];
+
+            var objectManager = new ymaps.ObjectManager();
+            // Загрузим регионы.
+            ymaps.borders.load('001', {
+                lang: 'ru',
+                quality: 2
+            }).then(function (result) {
+                // Очередь раскраски.
+                var queue = [];
+                //delete result.features[0];
+                //console.log(result.features);
+                //console.log(result.features[0].properties.iso3166);
+                // Создадим объект regions, где ключи это ISO код региона.
+                var regions = result.features.reduce(function (acc, feature) {
+                    
+                    // Добавим ISO код региона в качестве feature.id для objectManager.
+                    var iso = feature.properties.iso3166;
+                    feature.id = iso;
+                    // Добавим опции региона по умолчанию.
+                    feature.options = {
+                        fillOpacity: 0.6,
+                        strokeColor: '#FFF',
+                        strokeOpacity: 0.5
+                    };
+                    acc[iso] = feature;
+                    return acc;
+                }, {});
+
+                console.log(regions);
+
+        
+                // Функция, которая раскрашивает регион и добавляет всех нераскрасшенных соседей в очередь на раскраску.
+                function paint(iso) {
+                    
+                    // console.log(regions,'---',typeof(regions));
+                    
+                    // console.log(regions,'---',typeof(regions));
+                    // var availableRegions = ['RU', 'KZ', 'TM', 'AZ', 'IR'];
+                    // for (key in regions) {
+                    //     if (!(availableRegions.indexOf(key) != -1)) {
+                    //         //console.log(key);
+                    //         delete regions[key];
+                    //     }                   
+                    // }
+
+                    //console.log(iso);
+                    var allowedColors = colors.slice();
+                    // Получим ссылку на раскрашиваемый регион и на его соседей.
+                    var region = regions[iso];
+                    var neighbors = region.properties.neighbors;
+                    // Если у региона есть опция fillColor, значит мы его уже раскрасили.
+                    if (region.options.fillColor) {
+                        return;
+                    }
+                    // Если у региона есть соседи, то нужно проверить, какие цвета уже заняты.
+                    if (neighbors.length !== 0) {
+                        neighbors.forEach(function (neighbor) {
+                            var fillColor = regions[neighbor].options.fillColor;
+                            // Если регион раскрашен, то исключаем его цвет.
+                            if (fillColor) {
+                                var index = allowedColors.indexOf(fillColor);
+                                if (index != -1) {
+                                    allowedColors.splice(index, 1);
+                                }
+                                // Если регион не раскрашен, то добавляем его в очередь на раскраску.
+                            } else if (queue.indexOf(neighbor) === -1) {
+                                queue.push(neighbor);
+                            }
+                        });
+                    }
+                    // Раскрасим регион в первый доступный цвет.
+                    region.options.fillColor = allowedColors[0];
+                }
+                for (var iso in regions) {
+                    // Если регион не раскрашен, добавим его в очередь на раскраску.
+                    if (!regions[iso].options.fillColor) {
+                        queue.push(iso);
+                    }
+                    
+                    // Раскрасим все регионы из очереди.
+                    while (queue.length > 0) {
+                        paint(queue.shift());
+                    }
+                }
+                // Добавим регионы на карту.
+                result.features = [];
+                for (var reg in regions) {
+                    result.features.push(regions[reg]);
+                }
+                objectManager.add(result);
+                myMap.geoObjects.add(objectManager);
+            })
+
         getPlaceMark();
        
         $('.multiselect-native-select .btn-group ul li a label input').click(getPlaceMark);
@@ -69,7 +127,7 @@ $(document).ready(function(){
             url: "/api/geodata"
         }).done(function(data) {
 
-            myMap.geoObjects.removeAll(); /// удаляем метки перед созданием новых ///
+            myMap.geoObjects.remove(clusterer); /// удаляем метки перед созданием новых ///
             clusterer.removeAll();
 
             var selectedOrganization = document.querySelectorAll('#org .multiselect-native-select .btn-group'+
@@ -105,6 +163,7 @@ $(document).ready(function(){
                     clusterer.add(geodata[i]);
                 }
             }
+            
             myMap.geoObjects.add(clusterer);
         });
     }

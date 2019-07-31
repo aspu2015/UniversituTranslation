@@ -136,6 +136,11 @@
                 cursor: pointer;
             }
 
+            .langs div img:hover {
+                -webkit-filter: drop-shadow(3px 5px 5px #7ac8ff);
+                filter: drop-shadow(3px 5px 5px #7ac8ff);
+            }
+
             .filtersGroups {
                 height: 100px;
             }
@@ -193,6 +198,7 @@
                 float: left;
                 margin-left: 20px;
                 margin-bottom: 20px;
+                font-weight: bold;
             }
 
         </style>
@@ -271,7 +277,7 @@
                 <button class="filtersSubmit">Выбрать</button>
                 <!-- <div class=""><span id="filterSubmit"></span></div> -->
                 </div>
-                <br>
+                
                 
 
 
