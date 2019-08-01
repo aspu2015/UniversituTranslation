@@ -17,6 +17,7 @@
                     
                     <button class="button" onclick="location.href = '/country/create';" >добавить страну</button>
                     <br>
+                    <br>
                     <table class="table table-bordered">
                         <thead>
                             <tr>

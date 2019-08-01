@@ -19,6 +19,7 @@ class CreateUniversitiesTable extends Migration
             $table->string('description');
             $table->integer('country_id');
             $table->integer('organization_id');
+            $table->integer('locality_id');
             $table->double('geolocationX',15,8);
             $table->double('geolocationY',15,8);
             $table->timestamps();

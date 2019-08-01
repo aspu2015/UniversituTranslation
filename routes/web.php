@@ -71,3 +71,10 @@ Route::get('/api/tableuniversity', 'UniversityTableController@getData')->name('g
 Route::get('info_translation/', 'UniversityController@getTranslations');
 //Route::get('info_translation/show/{id}', 'InfoTranslationController@show');
 //Route::get('/api/get_translation', 'InfoTranslationController@getTranslations');
+
+Route::get('/locality', 'LocalityController@index');
+Route::get('/locality/create','LocalityController@create');
+Route::post('/locality/store','LocalityController@store');
+Route::get('/locality/{id}/edit','LocalityController@edit');
+Route::post('/locality/{id}/update','LocalityController@update');
+Route::post('/locality/{id}/destroy','LocalityController@destroy');

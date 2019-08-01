@@ -68,7 +68,8 @@ $(document).ready(function(){
                     // }
 
                     //console.log(iso);
-                    var allowedColors = colors.slice();
+                    var allowedColors = colors.slice(0, colors.length);
+                    console.log(allowedColors);
                     // Получим ссылку на раскрашиваемый регион и на его соседей.
                     var region = regions[iso];
                     var neighbors = region.properties.neighbors;
@@ -117,8 +118,8 @@ $(document).ready(function(){
 
         getPlaceMark();
        
-        $('.multiselect-native-select .btn-group ul li a label input').click(getPlaceMark);
-         
+        //$('.multiselect-native-select .btn-group ul li a label input').click(getPlaceMark);
+        $('.filtersSubmit').click(getPlaceMark); 
 
         function getPlaceMark() {
        

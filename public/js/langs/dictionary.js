@@ -63,6 +63,7 @@ $(document).ready(function(){
         });
 
         $('.langs div').on('click', function() {
+            //alert('yeah');
             onOptionClick(this.value);
         });
 

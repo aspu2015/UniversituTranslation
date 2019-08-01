@@ -79,6 +79,7 @@ class UniversityController extends Controller
         $university->name = $request->get('universityName');
         $university->organization_id = $request->get('organization_id');
         $university->country_id = $request->get('country_id');
+        $university->locality_id = $request->get('locality_id');
         $university->description = $request->get('universityDescription');
         $university->geolocationX = $request->get('universityLatitude');
         $university->geolocationY = $request->get('universityLongitude');
@@ -101,6 +102,7 @@ class UniversityController extends Controller
         $university->name = $request->get('universityName');
         $university->organization_id = $request->get('organization_id');
         $university->country_id = $request->get('country_id');
+        $university->locality_id = $request->get('locality_id');
         $university->description = $request->get('universityDescription');
         $university->geolocationX = $request->get('universityLatitude');
         $university->geolocationY = $request->get('universityLongitude');

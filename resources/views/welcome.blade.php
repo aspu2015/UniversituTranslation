@@ -88,7 +88,7 @@
 
             .m-b-md {
                 margin-bottom: 10px;
-                margin-top: 20px;
+                margin-top: 480px;
             }
             
             .myhr {
@@ -172,7 +172,7 @@
                 font-weight: bold;
             }
 
-            #allOrganizations a:link, a:visited {
+            .buttonLink a:link, a:visited {
                 /* background-color: #f75231; */
                 background-color: #3685f4;
                 color: white;
@@ -185,7 +185,7 @@
                 border-radius: 8px;
             }
 
-            #allOrganizations a:hover, a:active {
+            .buttonLink a:hover, a:active {
                 background-color: #0050bf;
             }
 
@@ -229,14 +229,16 @@
             @endif -->
 
             <div class="content">
-                <div class="title m-b-md">
-                Мультиязычный сайт для поддержки единого
+                <div class="title m-b-md" style="float: right; padding-right: 30px;">
+                 <p>Мультиязычный сайт для поддержки единого</p>
                  научно-образовательного пространства Каспийского региона
                     <!-- Мультиязычный сайт по совокупности 
                     образовательных, академических, 
                     функционально смежных для них организаций
                     Прикаспийских и иных государств -->
                 </div>
+                <div id="logoK"><img src="/images/kasp.png" style="width: 70px;
+                 display: inline-block;"></div>
                 
                 <div class="languagesField">
                     <span id="ChooseLangSpan" style="font-weight: bold; font-size: 16px;">
@@ -253,7 +255,7 @@
                 </div>
                 <br>
                 
-                <div id="allOrganizations">
+                <div class="buttonLink">
                     <a href="{{ url('/universitytable') }}">Все организации</a>
                 </div>
                 <!-- <hr> -->
@@ -303,7 +305,46 @@
 
 
                 <div id="map" style="width: 100%; height: 400px"></div>
+                <br>
+                <div class="contacts" style="margin-top: 20px;">
+                <div class="buttonLink">
+                    <a href="{{ url('/universitytable') }}">Контактная информация</a>
+                </div>
+                </div>
+                <div class="news">
+                    <div style="margin-top: 20px;
+                                font-weight: bold; 
+                                font-size: 24px; 
+                                width: 100%;
+                                height: 80px;
+                                background-color: #f2f2f2;
+                                padding-top: 20px;">
+                        Объявления
+                    </div>
+                       
+                    <hr>
+                <div id="news1" style="padding-right: 20px;">
+                <p style="font-weight: bold; font-size: 16px;"></p>
+                <p>Первый Каспийский Экономический форум состоится 12 августа 2019 года
+                 в Национальной туристической зоне «Аваза» (город Туркменбаши, Туркменистан).</p>
+
+                <p>Для участия в работе форума приглашаются делегации прикаспийских государств,
+                 в том числе руководители и члены правительств, главы прибрежных регионов
+                  и руководители региональных исполнительных органов управления,
+                   представители деловых кругов Прикаспийского региона и заинтересованных
+                    стран, научные работники, руководители компаний, осуществляющих
+                     экономическую деятельность на Каспийском море.</p>
+                </div>
                 <hr>
+                </div>
+                
+                <div class="footer" style="width: 100%;
+                                        height: 50px;
+                                    background-color: #5b5d61;
+                                    padding-top: 15px;
+                                    color: white;">
+                    © Copyright 2019 Астраханский государственный университет
+                </div>
                 <!-- <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">

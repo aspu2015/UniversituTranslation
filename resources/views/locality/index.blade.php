@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Типы организаций:</div>
+                <div class="card-header">Населенные пункты:</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,7 +15,9 @@
                     @endif
                     
                     
-                    <button class="button" onclick="location.href = '/organization/create';" >добавить тип организации</button>
+                    <button class="button" onclick="location.href = '/locality/create';" >
+                        добавить населенный пункт
+                    </button>
                     <br>
                     <br>
                     <table class="table table-bordered">
@@ -26,16 +28,16 @@
                                 <th scope="col">Удалить</th>
                             </tr>
                         </thead>
-                        @foreach ($organizations as $item)
+                        @foreach ($localities as $item)
                             <tr>
                                 <td>
                                     {{$item->name}}
                                 </td>
                                 <td>
-                                <a href="/organization/{{$item->id}}/edit">редактировать</a>
+                                <a href="/locality/{{$item->id}}/edit">редактировать</a>
                                 </td>
                                 <td>
-                                    <form action="/organization/{{$item->id}}/destroy" method="POST">
+                                    <form action="/locality/{{$item->id}}/destroy" method="POST">
                                         @csrf
                                         <input type="submit" value = "удалить">
                                     </form>

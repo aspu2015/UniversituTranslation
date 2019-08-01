@@ -17,6 +17,7 @@
                     
                     <button class="button" onclick="location.href = '/lang/create';" >добавить язык</button>
                     <br>
+                    <br>
                     <table class="table table-bordered">
                         <thead>
                             <tr>
