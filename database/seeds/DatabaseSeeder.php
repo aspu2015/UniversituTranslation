@@ -26,28 +26,29 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('languages')->insert([
-            'langName'=>'Azərbaycan',
+            'langName'=>'Azərbaycan dili',
             'picturePath'=>'',
             'priority'=>1
         ]);
 
         DB::table('languages')->insert([
-            'langName'=>'Türkmenistan',
+            'langName'=>'زبان فارسی',
             'picturePath'=>'',
             'priority'=>1
         ]);
 
         DB::table('languages')->insert([
-            'langName'=>'ایرانی',
+            'langName'=>'Казақша',
             'picturePath'=>'',
             'priority'=>1
         ]);
 
         DB::table('languages')->insert([
-            'langName'=>'Қазақстан',
+            'langName'=>'Türkmen dili',
             'picturePath'=>'',
             'priority'=>1
         ]);
+
         
 
         //55.831903, 37.411961

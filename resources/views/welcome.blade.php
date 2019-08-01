@@ -143,6 +143,7 @@
 
             .filtersGroups {
                 height: 100px;
+                margin-bottom: 20px;
             }
 
             .filtersGroups .filtersSubmit {
@@ -150,7 +151,7 @@
             }
 
             .filters {
-                padding-top: 10px;
+                border-top: 1px dashed black;
                 /* margin-left: auto; */
                 /* margin-right: auto; */
                 width: 85%;
@@ -159,10 +160,16 @@
                 background-color: #f2f2f2;
                 float: left;
                 /* border: 3px dashed #636b6f; */
+                padding-top: 30px;
             }
 
             .filters div {
                 display: inline-block;
+                padding-right: 30px;
+            }
+
+            #orgType, #countryName, #localityName {
+                font-weight: bold;
             }
 
             #allOrganizations a:link, a:visited {
@@ -197,8 +204,9 @@
             #hint {
                 float: left;
                 margin-left: 20px;
-                margin-bottom: 20px;
+                /* margin-bottom: 20px; */
                 font-weight: bold;
+                font-size: 16px;
             }
 
         </style>
@@ -230,7 +238,10 @@
                     Прикаспийских и иных государств -->
                 </div>
                 
-                <div class="languagesField">Выберите язык
+                <div class="languagesField">
+                    <span id="ChooseLangSpan" style="font-weight: bold; font-size: 16px;">
+                        Выберите язык
+                    </span>
                     <div class="langs"></div>
                     <div class="choose-lang-div">
                         <select id="webmenu"  name = "webmenu">
@@ -254,8 +265,9 @@
                 <!-- <hr> -->
 
                 <div class="filtersGroups">
-                <div class="filters">
                 <span id="hint">Для выбора группы организаций используйте фильтры</span><br>
+                <div class="filters">
+                
                 <div id="org"><span id="orgType"></span>
                 <select id="organizationChoice" multiple="multiple">
                 @foreach ($organizations as $item)   
@@ -273,6 +285,13 @@
                 @endforeach
                 </select>
                 </div>
+
+                <div id="locality"><span id="localityName">Населенные пункты</span>
+                <select id="localityChoice" multiple="multiple">  
+                    <option value="Любые" selected="selected">Любые</option>
+                </select>
+                </div>
+
                 </div>
                 <button class="filtersSubmit">Выбрать</button>
                 <!-- <div class=""><span id="filterSubmit"></span></div> -->
@@ -294,6 +313,7 @@
                 $(document).ready(function() {
                     $('#organizationChoice').multiselect();
                     $('#countryChoice').multiselect();
+                    $('#localityChoice').multiselect();
                 });
                 </script>
 

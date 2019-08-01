@@ -2,7 +2,7 @@ $(document).ready(function(){
     ymaps.ready(init);
     function init () {
         var myMap = new ymaps.Map('map', {
-                center: [41.721726, 50.825439],
+                center: [42.591726, 50.825439],
                 zoom: 5,
                 controls: ['geolocationControl']
             }, {
@@ -21,7 +21,7 @@ $(document).ready(function(){
 
         
 
-            var colors = ['#F0F075', '#FB6C3F', '#3e5cad', '#49C0B5'];
+            var colors = ['#F0F075', '#FB6C3F', '#3E5CAD', '#49C0B5', '#ED9D2D', '#36C755'];
 
             var objectManager = new ymaps.ObjectManager();
             // Загрузим регионы.
