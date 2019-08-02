@@ -63,6 +63,7 @@ function onOptionClick(langName){
         
 
         var tr = document.createElement('tr');
+        tr.className = "notFirst";
         for (var j = 0; j < options[i].length; j++) {
             var td = document.createElement('td');
             td.innerHTML = options[i][j];

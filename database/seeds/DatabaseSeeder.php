@@ -11,45 +11,102 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('organizations')->insert([
+            'name'=>'Бюджетная'
+        ]);
+
+        DB::table('organizations')->insert([
+            'name'=>'Коммерческая'
+        ]);
+
+        DB::table('countries')->insert([
+            'name'=>'Россия'
+        ]);
+
+        DB::table('countries')->insert([
+            'name'=>'Азербайджан'
+        ]);
+
+        DB::table('countries')->insert([
+            'name'=>'Иран'
+        ]);
+        
+        DB::table('countries')->insert([
+            'name'=>'Казахстан'
+        ]);    
+
+        DB::table('countries')->insert([
+            'name'=>'Туркменистан'
+        ]);
         // $this->call(UsersTableSeeder::class);
 
         DB::table('languages')->insert([
             'langName'=>'Русский',
             'picturePath'=>'/images/1564554070.png',
-            'priority'=>1
+            'priority'=>'1'
         ]);
 
         DB::table('languages')->insert([
             'langName'=>'English',
-            'picturePath'=>'/images/1564554076.png',
+            'picturePath'=>'',
+            'priority'=>'2'
+        ]);
+
+        DB::table('languages')->insert([
+            'langName'=>'中文 (Chinese)',
+            'picturePath'=>'',
+            'priority'=>'2'
+        ]);
+
+        DB::table('languages')->insert([
+            'langName'=>'اللغة العربية (Arabic)',
+            'picturePath'=>'',
+            'priority'=>'2'
+        ]);
+
+        DB::table('languages')->insert([
+            'langName'=>'Français (French)',
+            'picturePath'=>'',
+            'priority'=>'2'
+        ]);
+
+        DB::table('languages')->insert([
+            'langName'=>'Español (Spanish)',
+            'picturePath'=>'',
             'priority'=>2
         ]);
 
         DB::table('languages')->insert([
             'langName'=>'Azərbaycan dili',
             'picturePath'=>'/images/1564554082.png',
-            'priority'=>1
+            'priority'=>'1'
         ]);
 
         DB::table('languages')->insert([
             'langName'=>'زبان فارسی',
             'picturePath'=>'/images/1564554096.png',
-            'priority'=>1
+            'priority'=>'1'
         ]);
 
         DB::table('languages')->insert([
             'langName'=>'Казақша',
             'picturePath'=>'/images/1564554102.png',
-            'priority'=>1
+            'priority'=>'1'
         ]);
 
         DB::table('languages')->insert([
             'langName'=>'Türkmen dili',
             'picturePath'=>'/images/1564554090.png',
-            'priority'=>1
+            'priority'=>'1'
         ]);
 
+
         
+
+        DB::table('localities')->insert([
+            'country_id'=>'1',
+            'name'=>'Астрахань'
+        ]);
 
         
         DB::table('universities')->insert([
@@ -60,6 +117,36 @@ class DatabaseSeeder extends Seeder
             'locality_id'=>'1',
             'geolocationX'=>46.5361,
             'geolocationY'=>48.0574
+        ]);
+
+        DB::table('universities')->insert([
+            'name' => 'ASU3',
+            'description' => 'ASU3 - Astrakhan State University3',
+            'country_id'=>'1',
+            'organization_id'=>'1',
+            'locality_id'=>'1',
+            'geolocationX'=>46.5362,
+            'geolocationY'=>48.0575
+        ]);
+
+        DB::table('universities')->insert([
+            'name' => 'ASU2',
+            'description' => 'ASU2 - Astrakhan State University2',
+            'country_id'=>'1',
+            'organization_id'=>'1',
+            'locality_id'=>'1',
+            'geolocationX'=>46.5340,
+            'geolocationY'=>48.0543
+        ]);
+
+        DB::table('universities')->insert([
+            'name' => 'ASU1',
+            'description' => 'ASU1 - Astrakhan State University1',
+            'country_id'=>'1',
+            'organization_id'=>'1',
+            'locality_id'=>'1',
+            'geolocationX'=>46.5374,
+            'geolocationY'=>48.0587
         ]);
 
         DB::table('universities')->insert([
@@ -94,8 +181,8 @@ class DatabaseSeeder extends Seeder
 
         DB::table('universities')->insert([
             'name' => 'T',
-            'description' => 'T - university',
-            'country_id'=>'1',
+            'description' => 'T - university description',
+            'country_id'=>'4',
             'organization_id'=>'1',
             'locality_id'=>'1',
             'geolocationX'=>35.661703,
@@ -111,6 +198,7 @@ class DatabaseSeeder extends Seeder
             'text'=>'ASU - one of the best universities',
             'country' => 'Russia',
             'organization' => 'Budgetary',
+            'locality' => 'Russia',
             'site_URL' => 'http://asu.edu.ru/'
         ]);
 
@@ -122,6 +210,7 @@ class DatabaseSeeder extends Seeder
             'text'=>'АГУ- один из лучших университетов в Астрахани',
             'country' => 'Россия',
             'organization' => 'Бюджетная',
+            'locality' => 'Россия',
             'site_URL' => 'http://asu.edu.ru/'
         ]);
 
@@ -133,6 +222,7 @@ class DatabaseSeeder extends Seeder
             'text'=>'university description',
             'country' => 'Azerbaijan',
             'organization' => 'Commercial',
+            'locality' => 'Baku',
             'site_URL' => 'http://bsu.edu.az/'
         ]);
 
@@ -144,29 +234,11 @@ class DatabaseSeeder extends Seeder
             'text'=>'описание университета',
             'country' => 'Азербайджан',
             'organization' => 'Коммерческая',
+            'locality' => 'Baku',
             'site_URL' => 'http://bsu.edu.az/'
         ]);
 
-
-        DB::table('organizations')->insert([
-            'name'=>'Бюджетная'
-        ]);
-
-        DB::table('organizations')->insert([
-            'name'=>'Коммерческая'
-        ]);
-
-        DB::table('countries')->insert([
-            'name'=>'Россия'
-        ]);
-
-        DB::table('countries')->insert([
-            'name'=>'Туркменистан'
-        ]);
-
-        DB::table('countries')->insert([
-            'name'=>'Азербайджан'
-        ]);
+        
 
         DB::table('info_category')->insert([
             'name'=>'Главная'
@@ -247,72 +319,120 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('dictionary')->insert([
-            'language_id'=>2,
-            'name'=>'textBody',
-            'text'=>'The trailing set, which excludes the obvious case, traditionally restores trigonometric
-            integration from functions that go to infinity along lines, which is not surprising.
-             Scalar product supports indirect absolutely convergent series. Integral functions,
-              the presence of a finite discontinuity projects an abnormal method of successive
-               approximations. Moreover, the scalar product is necessary and sufficient.
-                A closed set is trivial. The convergent series contains the natural logarithm.'
-        ]);
-
-        DB::table('dictionary')->insert([
-            'language_id'=>1,
-            'name'=>'textBody',
-            'text'=>'Замкнутое множество, исключая очевидный случай, традиционно восстанавливает
-            тригонометрический интеграл от функции, обращающейся в бесконечность вдоль линии,
-             что неудивительно. Скалярное произведение поддерживает косвенный абсолютно сходящийся ряд.
-              Интеграл от функции, имеющий конечный разрыв проецирует анормальный метод
-               последовательных приближений. Более того, скалярное произведение необходимо и достаточно.
-                Замкнутое множество тривиально. Сходящийся ряд отражает натуральный логарифм.'
-        ]);
-
-        DB::table('dictionary')->insert([
-            'language_id'=>2,
-            'name'=>'textBody2',
-            'text'=>'The polynomial reverses the graph of a function of many variables.
-            The axiom directly changes the functional analysis; further calculations will
-             be left to students as simple homework. Asymptote allows the rotor of a vector field.
-              In general, the odd function supports an orthogonal determinant.
-               It seems logical that the limit of the function produces an 
-               experimental double integral. Interpolation corresponds to an abnormal determinant.'
-        ]);
-
-        DB::table('dictionary')->insert([
-            'language_id'=>1,
-            'name'=>'textBody2',
-            'text'=>'Полином переворачивает график функции многих переменных. Аксиома непосредственно изменяет
-            функциональный анализ, дальнейшие выкладки оставим студентам в качестве несложной
-             домашней работы. Асимптота допускает ротор векторного поля. В общем, нечетная функция
-              поддерживает ортогональный определитель. Представляется логичным, что предел функции
-               продуцирует экспериментальный двойной интеграл. Интерполяция соответствует
-                анормальный детерминант.'
-        ]);
-
-        DB::table('dictionary')->insert([
             'language_id'=>3,
-            'name'=>'textBody2',
-            'text'=>''
+            'name'=>'chooseLang',
+            'text'=>'Language'
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>4,
-            'name'=>'textBody2',
-            'text'=>''
+            'name'=>'chooseLang',
+            'text'=>'Language'
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>5,
-            'name'=>'textBody2',
-            'text'=>''
+            'name'=>'chooseLang',
+            'text'=>'Language'
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>6,
-            'name'=>'textBody2',
-            'text'=>''
+            'name'=>'chooseLang',
+            'text'=>'Language'
         ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>7,
+            'name'=>'chooseLang',
+            'text'=>'Language'
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>8,
+            'name'=>'chooseLang',
+            'text'=>'Language'
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>9,
+            'name'=>'chooseLang',
+            'text'=>'Language'
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>10,
+            'name'=>'chooseLang',
+            'text'=>'Language'
+        ]);
+
+        // DB::table('dictionary')->insert([
+        //     'language_id'=>2,
+        //     'name'=>'textBody',
+        //     'text'=>'The trailing set, which excludes the obvious case, traditionally restores trigonometric
+        //     integration from functions that go to infinity along lines, which is not surprising.
+        //      Scalar product supports indirect absolutely convergent series. Integral functions,
+        //       the presence of a finite discontinuity projects an abnormal method of successive
+        //        approximations. Moreover, the scalar product is necessary and sufficient.
+        //         A closed set is trivial. The convergent series contains the natural logarithm.'
+        // ]);
+
+        // DB::table('dictionary')->insert([
+        //     'language_id'=>1,
+        //     'name'=>'textBody',
+        //     'text'=>'Замкнутое множество, исключая очевидный случай, традиционно восстанавливает
+        //     тригонометрический интеграл от функции, обращающейся в бесконечность вдоль линии,
+        //      что неудивительно. Скалярное произведение поддерживает косвенный абсолютно сходящийся ряд.
+        //       Интеграл от функции, имеющий конечный разрыв проецирует анормальный метод
+        //        последовательных приближений. Более того, скалярное произведение необходимо и достаточно.
+        //         Замкнутое множество тривиально. Сходящийся ряд отражает натуральный логарифм.'
+        // ]);
+
+        // DB::table('dictionary')->insert([
+        //     'language_id'=>2,
+        //     'name'=>'textBody2',
+        //     'text'=>'The polynomial reverses the graph of a function of many variables.
+        //     The axiom directly changes the functional analysis; further calculations will
+        //      be left to students as simple homework. Asymptote allows the rotor of a vector field.
+        //       In general, the odd function supports an orthogonal determinant.
+        //        It seems logical that the limit of the function produces an 
+        //        experimental double integral. Interpolation corresponds to an abnormal determinant.'
+        // ]);
+
+        // DB::table('dictionary')->insert([
+        //     'language_id'=>1,
+        //     'name'=>'textBody2',
+        //     'text'=>'Полином переворачивает график функции многих переменных. Аксиома непосредственно изменяет
+        //     функциональный анализ, дальнейшие выкладки оставим студентам в качестве несложной
+        //      домашней работы. Асимптота допускает ротор векторного поля. В общем, нечетная функция
+        //       поддерживает ортогональный определитель. Представляется логичным, что предел функции
+        //        продуцирует экспериментальный двойной интеграл. Интерполяция соответствует
+        //         анормальный детерминант.'
+        // ]);
+
+        // DB::table('dictionary')->insert([
+        //     'language_id'=>3,
+        //     'name'=>'textBody2',
+        //     'text'=>''
+        // ]);
+
+        // DB::table('dictionary')->insert([
+        //     'language_id'=>4,
+        //     'name'=>'textBody2',
+        //     'text'=>''
+        // ]);
+
+        // DB::table('dictionary')->insert([
+        //     'language_id'=>5,
+        //     'name'=>'textBody2',
+        //     'text'=>''
+        // ]);
+
+        // DB::table('dictionary')->insert([
+        //     'language_id'=>6,
+        //     'name'=>'textBody2',
+        //     'text'=>''
+        // ]);
 
 
     }

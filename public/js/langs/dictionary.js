@@ -13,6 +13,9 @@ function findGetParameter(parameterName) {
 }
 
 function onOptionClick(langName){
+
+    //$('#webmenu option').setAttribute('hidden', 'hidden');
+
     for(var i =0; i < langs.length; i++){
         let obj = langs[i];
         if(obj.langName == langName){
@@ -36,17 +39,16 @@ $(document).ready(function(){
         langs = translations;
         let firstValue = null;
         var names = [];
-        $('#webmenu').append($('<option selected disabled data-image="/images/earth-icon-2.png"></option>'));
+        $('#webmenu').append($('<option id="earth" selected disabled data-image="/images/earth-icon-2.png"></option>'));
         for(var i = 0; i < translations.length; i++){
             if (!(names.includes(translations[i].langName))) {
                 let langName = translations[i].langName;
-                let picturePath = translations[i].picturePath;          
-
-                if (translations[i].priority === 1) {
-                    $('#webmenu').append($('<option value="'+langName+'" data-image="'+picturePath+'">'+langName+'</option>'));
+                let picturePath = translations[i].picturePath;
+                if (translations[i].priority == '1') {
+                    //$('#webmenu').append($('<option value="'+langName+'" data-image="'+picturePath+'">'+langName+'</option>'));
                     $('.langs').append($('<div value="'+langName+'"><img src="'+picturePath+'">'+langName+'</div>'));
                 }
-                else if (translations[i].priority === 2) {
+                else if (translations[i].priority == '2') {
                     $('#webmenu').append($('<option value="'+langName+'" data-image="'+picturePath+'">'+langName+'</option>'));
                 }
 
@@ -61,6 +63,12 @@ $(document).ready(function(){
         $('#webmenu').on('change', function() {
             onOptionClick(this.value);
         });
+
+        $('#webmenu').on('click', function() {
+            $('#webmenu option[id="earth"]').attr('hidden', 'hidden');    
+        });
+        
+
 
         $('.langs div').on('click', function() {
             //alert('yeah');

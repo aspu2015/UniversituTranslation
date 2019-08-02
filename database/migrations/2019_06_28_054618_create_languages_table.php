@@ -17,7 +17,7 @@ class CreateLanguagesTable extends Migration
             $table->bigIncrements('id');
             $table->string('langName');
             $table->string('picturePath');
-            $table->integer('priority');
+            $table->string('priority');
             $table->timestamps();
         });
     }

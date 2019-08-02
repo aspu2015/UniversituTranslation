@@ -54,4 +54,11 @@ class LocalityController extends Controller
         Locality::find($id)->destroy();
         return redirect('/locality');
     }
+
+    // public function getLocalities(){
+    //     $all = Locality::getAllLocalities();
+    //     return json_encode($all);
+    // }
+
+
 }

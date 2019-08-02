@@ -229,7 +229,7 @@
             @endif -->
 
             <div class="content">
-                <div class="title m-b-md" style="float: right; padding-right: 30px;">
+                <div class="title m-b-md" style="float: right; padding-right: 70px;">
                  <p>Мультиязычный сайт для поддержки единого</p>
                  научно-образовательного пространства Каспийского региона
                     <!-- Мультиязычный сайт по совокупности 
@@ -238,7 +238,8 @@
                     Прикаспийских и иных государств -->
                 </div>
                 <div id="logoK"><img src="/images/kasp.png" style="width: 70px;
-                 display: inline-block;"></div>
+                 display: inline-block;
+                 margin-top: 480px;"></div>
                 
                 <div class="languagesField">
                     <span id="ChooseLangSpan" style="font-weight: bold; font-size: 16px;">

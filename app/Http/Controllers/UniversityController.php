@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Organization;
 use App\Country;
 use App\InfoTranslation;
+use App\Locality;
 
 class UniversityController extends Controller
 {
@@ -90,9 +91,11 @@ class UniversityController extends Controller
     public function create(){
         $organizations = Organization::all();
         $country = Country::all();
+        $locality = Locality::all();
         return view('universities.UniversityCreate',[
             'organizations' => $organizations,
-            'country' => $country
+            'country' => $country,
+            'locality' => $locality
         ]);
     }
 

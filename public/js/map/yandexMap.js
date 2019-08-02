@@ -50,7 +50,7 @@ $(document).ready(function(){
                     return acc;
                 }, {});
 
-                console.log(regions);
+                //console.log(regions);
 
         
                 // Функция, которая раскрашивает регион и добавляет всех нераскрасшенных соседей в очередь на раскраску.
@@ -69,7 +69,7 @@ $(document).ready(function(){
 
                     //console.log(iso);
                     var allowedColors = colors.slice(0, colors.length);
-                    console.log(allowedColors);
+                    //console.log(allowedColors);
                     // Получим ссылку на раскрашиваемый регион и на его соседей.
                     var region = regions[iso];
                     var neighbors = region.properties.neighbors;

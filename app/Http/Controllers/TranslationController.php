@@ -53,6 +53,8 @@ class TranslationController extends Controller
         $translation->text = $request->get('universityDescription');
         $translation->country = $request->get('universityCountry');
         $translation->organization = $request->get('universityOrganization');
+        $translation->locality = $request->get('universityLocality');
+        $translation->site_URL = $request->get('universityURL');
         $translation->save();
         return redirect("/university/$id/edit");
     }
@@ -102,6 +104,8 @@ class TranslationController extends Controller
         $translation->text = $request->get('universityDescription');
         $translation->country = $request->get('universityCountry');
         $translation->organization = $request->get('universityOrganization');
+        $translation->locality = $request->get('universityLocality');
+        $translation->site_URL = $request->get('universityURL');
         $translation->save();
         return redirect("/university/$translation->university_id/edit");
     }

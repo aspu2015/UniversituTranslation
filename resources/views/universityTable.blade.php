@@ -54,6 +54,11 @@
             font-weight: bold;
         }
 
+        .notFirst:hover {
+            background-color: #ced2db;
+        }
+
+
     </style>
 
 </head>

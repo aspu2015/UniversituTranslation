@@ -78,3 +78,4 @@ Route::post('/locality/store','LocalityController@store');
 Route::get('/locality/{id}/edit','LocalityController@edit');
 Route::post('/locality/{id}/update','LocalityController@update');
 Route::post('/locality/{id}/destroy','LocalityController@destroy');
+Route::get('/api/getlocalities', 'LocalityController@getLocalities');

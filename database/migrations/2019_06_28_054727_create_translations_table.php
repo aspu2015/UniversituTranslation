@@ -24,6 +24,7 @@ class CreateTranslationsTable extends Migration
             $table->longText('text');
             $table->text('country');
             $table->text('organization');
+            $table->text('locality');
             $table->text('site_URL');
             $table->timestamps();
         });

@@ -35,6 +35,11 @@
                                 <input type="text" class="form-control" id="universityCountry" name="universityCountry" aria-describedby="descriptionHelp" placeholder="Страна " value="{{$translation->country}}">                               
                         </div>
                         <div class="form-group">
+                                <label for="universityCountry">Населенный пункт:</label>
+                                <input type="text" class="form-control" id="universityLocality" name="universityLocality" aria-describedby="descriptionHelp" placeholder="Населенный пункт " >
+                                
+                        </div>
+                        <div class="form-group">
                                 <label for="universityOrganization">Тип организации:</label>
                                 <input type="text" class="form-control" id="universityOrganization" name="universityOrganization" aria-describedby="descriptionHelp" placeholder="Тип организации " value="{{$translation->organization}}">        
                         </div>

@@ -22,6 +22,7 @@ class UniversityCollection
                 "id"=>$i,
                 "country"=>$currentUniversity->country_id,
                 "organization"=>$currentUniversity->organization_id, ////// 16.07.19 22:29 /////////////
+                "locality"=>$currentUniversity->locality_id,
                 "universityId"=>$currentUniversity->id,
                 "geometry"=>[
                     "type"=>"Point",

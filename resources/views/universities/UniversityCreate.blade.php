@@ -40,6 +40,14 @@
                         </div>
 
                         <div class="form-group">
+                            <select name="locality_id" class="form-control">
+                            @foreach ($locality as $item)   
+                                <option value="{{$item->id}}"> {{$item->name}}</option>
+                            @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
                                 <label for="universityDescription">Краткое описание университета</label>
                                 <input type="text" class="form-control" id="universityDescription" name="universityDescription" aria-describedby="descriptionHelp" placeholder="Введите описание " >
                                 
