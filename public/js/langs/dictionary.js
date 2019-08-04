@@ -45,11 +45,11 @@ $(document).ready(function(){
                 let langName = translations[i].langName;
                 let picturePath = translations[i].picturePath;
                 if (translations[i].priority == '1') {
-                    //$('#webmenu').append($('<option value="'+langName+'" data-image="'+picturePath+'">'+langName+'</option>'));
                     $('.langs').append($('<div value="'+langName+'"><img src="'+picturePath+'">'+langName+'</div>'));
                 }
                 else if (translations[i].priority == '2') {
-                    $('#webmenu').append($('<option value="'+langName+'" data-image="'+picturePath+'">'+langName+'</option>'));
+                    $('#webmenu').append($('<option value="'+langName+'">'+langName+'</option>'));
+                    //$('#webmenu').append($('<option value="'+langName+'" data-image="'+picturePath+'">'+langName+'</option>'));
                 }
 
                 names.push(translations[i].langName);
@@ -58,7 +58,9 @@ $(document).ready(function(){
                     firstValue = langName;
             }
         }
-        onOptionClick(firstValue);
+        
+        onOptionClick($('.langs div[value="Русский"]').attr('value'));
+        
 
         $('#webmenu').on('change', function() {
             onOptionClick(this.value);
@@ -71,8 +73,8 @@ $(document).ready(function(){
 
 
         $('.langs div').on('click', function() {
-            //alert('yeah');
-            onOptionClick(this.value);
+            onOptionClick($(this).attr('value'));
+            //onOptionClick(this.value);
         });
 
 

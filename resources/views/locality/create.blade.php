@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Страны:</div>
+                <div class="card-header">Населенные пункты:</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -23,7 +23,7 @@
                                 
                         </div>
                         <div class="form-group">
-                            <select name="organization_id" class="form-control">
+                            <select name="country_id" class="form-control">
                             @foreach ($country as $item)   
                                 <option value="{{$item->id}}"> {{$item->name}}</option>
                             @endforeach

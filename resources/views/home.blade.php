@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Университеты:</div>
+                <div class="card-header">Организации:</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -16,7 +16,7 @@
 
                     <br>
 
-                    <button class="button" onclick="location.href = '/university/create';" >добавить университет</button>
+                    <button class="button" onclick="location.href = '/university/create';" >добавить организацию</button>
                     <br><br>
                     <table class="table table-bordered">
                         <thead>

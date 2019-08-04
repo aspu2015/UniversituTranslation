@@ -366,74 +366,116 @@ class DatabaseSeeder extends Seeder
             'text'=>'Language'
         ]);
 
-        // DB::table('dictionary')->insert([
-        //     'language_id'=>2,
-        //     'name'=>'textBody',
-        //     'text'=>'The trailing set, which excludes the obvious case, traditionally restores trigonometric
-        //     integration from functions that go to infinity along lines, which is not surprising.
-        //      Scalar product supports indirect absolutely convergent series. Integral functions,
-        //       the presence of a finite discontinuity projects an abnormal method of successive
-        //        approximations. Moreover, the scalar product is necessary and sufficient.
-        //         A closed set is trivial. The convergent series contains the natural logarithm.'
-        // ]);
+        DB::table('dictionary')->insert([
+            'language_id'=>1,
+            'name'=>'allOrganizations',
+            'text'=>'Все организации'
+        ]);
 
-        // DB::table('dictionary')->insert([
-        //     'language_id'=>1,
-        //     'name'=>'textBody',
-        //     'text'=>'Замкнутое множество, исключая очевидный случай, традиционно восстанавливает
-        //     тригонометрический интеграл от функции, обращающейся в бесконечность вдоль линии,
-        //      что неудивительно. Скалярное произведение поддерживает косвенный абсолютно сходящийся ряд.
-        //       Интеграл от функции, имеющий конечный разрыв проецирует анормальный метод
-        //        последовательных приближений. Более того, скалярное произведение необходимо и достаточно.
-        //         Замкнутое множество тривиально. Сходящийся ряд отражает натуральный логарифм.'
-        // ]);
+        DB::table('dictionary')->insert([
+            'language_id'=>2,
+            'name'=>'allOrganizations',
+            'text'=>'All the organizations'
+        ]);
 
-        // DB::table('dictionary')->insert([
-        //     'language_id'=>2,
-        //     'name'=>'textBody2',
-        //     'text'=>'The polynomial reverses the graph of a function of many variables.
-        //     The axiom directly changes the functional analysis; further calculations will
-        //      be left to students as simple homework. Asymptote allows the rotor of a vector field.
-        //       In general, the odd function supports an orthogonal determinant.
-        //        It seems logical that the limit of the function produces an 
-        //        experimental double integral. Interpolation corresponds to an abnormal determinant.'
-        // ]);
+        DB::table('dictionary')->insert([
+            'language_id'=>1,
+            'name'=>'localityName',
+            'text'=>'Населенные пункты'
+        ]);
+        
+        DB::table('dictionary')->insert([
+            'language_id'=>2,
+            'name'=>'localityName',
+            'text'=>'Localities'
+        ]);
 
-        // DB::table('dictionary')->insert([
-        //     'language_id'=>1,
-        //     'name'=>'textBody2',
-        //     'text'=>'Полином переворачивает график функции многих переменных. Аксиома непосредственно изменяет
-        //     функциональный анализ, дальнейшие выкладки оставим студентам в качестве несложной
-        //      домашней работы. Асимптота допускает ротор векторного поля. В общем, нечетная функция
-        //       поддерживает ортогональный определитель. Представляется логичным, что предел функции
-        //        продуцирует экспериментальный двойной интеграл. Интерполяция соответствует
-        //         анормальный детерминант.'
-        // ]);
+        DB::table('dictionary')->insert([
+            'language_id'=>1,
+            'name'=>'ChooseLangSpan',
+            'text'=>'Выберите язык'
+        ]);
 
-        // DB::table('dictionary')->insert([
-        //     'language_id'=>3,
-        //     'name'=>'textBody2',
-        //     'text'=>''
-        // ]);
+        DB::table('dictionary')->insert([
+            'language_id'=>2,
+            'name'=>'ChooseLangSpan',
+            'text'=>'Choose language'
+        ]);
+        
+        DB::table('dictionary')->insert([
+            'language_id'=>1,
+            'name'=>'titleSite',
+            'text'=>'<p>Мультиязычный сайт для поддержки единого</p>
+            научно-образовательного пространства Каспийского региона'
+        ]);
 
-        // DB::table('dictionary')->insert([
-        //     'language_id'=>4,
-        //     'name'=>'textBody2',
-        //     'text'=>''
-        // ]);
+        DB::table('dictionary')->insert([
+            'language_id'=>2,
+            'name'=>'titleSite',
+            'text'=>'<p>Multilingual site to support a single</p>
+            scientific and educational space of the Caspian region'
+        ]);
 
-        // DB::table('dictionary')->insert([
-        //     'language_id'=>5,
-        //     'name'=>'textBody2',
-        //     'text'=>''
-        // ]);
+        DB::table('dictionary')->insert([
+            'language_id'=>1,
+            'name'=>'hint',
+            'text'=>'Для выбора группы организаций используйте фильтры'
+        ]);
 
-        // DB::table('dictionary')->insert([
-        //     'language_id'=>6,
-        //     'name'=>'textBody2',
-        //     'text'=>''
-        // ]);
+        DB::table('dictionary')->insert([
+            'language_id'=>2,
+            'name'=>'hint',
+            'text'=>'Use filters to select a group of organizations'
+        ]);
 
+        DB::table('dictionary')->insert([
+            'language_id'=>1,
+            'name'=>'applyFilters',
+            'text'=>'Выбрать'
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>2,
+            'name'=>'applyFilters',
+            'text'=>'Choose'
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>1,
+            'name'=>'contactInfo',
+            'text'=>'Контактная информация'
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>2,
+            'name'=>'contactInfo',
+            'text'=>'Contact Information'
+        ]);
+        
+        DB::table('dictionary')->insert([
+            'language_id'=>1,
+            'name'=>'newsTitle',
+            'text'=>'Объявления'
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>2,
+            'name'=>'newsTitle',
+            'text'=>'News'
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>1,
+            'name'=>'copyright',
+            'text'=>'© Copyright 2019 Астраханский государственный университет'
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>2,
+            'name'=>'copyright',
+            'text'=>'© Copyright 2019 Astrakhan State University'
+        ]);
+        
 
     }
 }

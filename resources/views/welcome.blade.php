@@ -88,7 +88,7 @@
 
             .m-b-md {
                 margin-bottom: 10px;
-                margin-top: 480px;
+                margin-top: 600px;
             }
             
             .myhr {
@@ -230,8 +230,7 @@
 
             <div class="content">
                 <div class="title m-b-md" style="float: right; padding-right: 70px;">
-                 <p>Мультиязычный сайт для поддержки единого</p>
-                 научно-образовательного пространства Каспийского региона
+                 <span id="titleSite"></span>
                     <!-- Мультиязычный сайт по совокупности 
                     образовательных, академических, 
                     функционально смежных для них организаций
@@ -239,11 +238,11 @@
                 </div>
                 <div id="logoK"><img src="/images/kasp.png" style="width: 70px;
                  display: inline-block;
-                 margin-top: 480px;"></div>
+                 margin-top: 600px;"></div>
                 
                 <div class="languagesField">
                     <span id="ChooseLangSpan" style="font-weight: bold; font-size: 16px;">
-                        Выберите язык
+                        
                     </span>
                     <div class="langs"></div>
                     <div class="choose-lang-div">
@@ -257,7 +256,7 @@
                 <br>
                 
                 <div class="buttonLink">
-                    <a href="{{ url('/universitytable') }}">Все организации</a>
+                    <a href="{{ url('/universitytable') }}"><span id="allOrganizations"></span></a>
                 </div>
                 <!-- <hr> -->
                 <!-- <div class="container">
@@ -268,7 +267,7 @@
                 <!-- <hr> -->
 
                 <div class="filtersGroups">
-                <span id="hint">Для выбора группы организаций используйте фильтры</span><br>
+                <span id="hint"></span><br>
                 <div class="filters">
                 
                 <div id="org"><span id="orgType"></span>
@@ -289,14 +288,14 @@
                 </select>
                 </div>
 
-                <div id="locality"><span id="localityName">Населенные пункты</span>
+                <div id="locality"><span id="localityName"></span>
                 <select id="localityChoice" multiple="multiple">  
                     <option value="Любые" selected="selected">Любые</option>
                 </select>
                 </div>
 
                 </div>
-                <button class="filtersSubmit">Выбрать</button>
+                <button class="filtersSubmit"><span id="applyFilters"></span></button>
                 <!-- <div class=""><span id="filterSubmit"></span></div> -->
                 </div>
                 
@@ -309,7 +308,7 @@
                 <br>
                 <div class="contacts" style="margin-top: 20px;">
                 <div class="buttonLink">
-                    <a href="{{ url('/universitytable') }}">Контактная информация</a>
+                    <a href="{{ url('/universitytable') }}"><span id="contactInfo"></span></a>
                 </div>
                 </div>
                 <div class="news">
@@ -320,7 +319,7 @@
                                 height: 80px;
                                 background-color: #f2f2f2;
                                 padding-top: 20px;">
-                        Объявления
+                        <span id="newsTitle"></span>
                     </div>
                        
                     <hr>
@@ -344,7 +343,7 @@
                                     background-color: #5b5d61;
                                     padding-top: 15px;
                                     color: white;">
-                    © Copyright 2019 Астраханский государственный университет
+                    <span id="copyright"></span>
                 </div>
                 <!-- <div class="container">
                     <div class="row">

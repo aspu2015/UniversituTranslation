@@ -34,7 +34,7 @@
                     Главная
                 </a>
                 <a class="navbar-brand" href="{{ url('/home') }}">
-                    Университеты
+                    Организации
                 </a>
                 <a class="navbar-brand" href="{{ url('/lang') }}">
                     Языки

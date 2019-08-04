@@ -23,35 +23,43 @@ class LocalityController extends Controller
     }
 
     public function edit($id){
+        $currentLocality = Locality::find($id);
+        $selectedCountry = Country::find($currentLocality->country_id);
+        $avalibleCountries = Country::where('id','<>',$currentLocality->country_id )->get();
         return View('locality.edit',[
-            'locality' => Locality::find($id)
+            'locality' => Locality::find($id),
+            'country' => $avalibleCountries,
+            'currentCountry' => $selectedCountry
         ]);
     }
 
     public function update(Request $request, $id){
         $locality = Locality::find($id);
         $locality->name = $request->get('name');
+        $locality->country_id = $request->get('country_id');
         $locality->save();
         return redirect('/locality');
     }
 
     public function create(){
+        $locality = Locality::all();
         $country = Country::all();
         return view('locality.create',[
+            'locality' => $locality,
             'country' => $country
         ]);
     }
 
     public function store(Request $request){
         $locality = new Locality;
-        $locality->name = $request;
+        $locality->name = $request->get('name');
         $locality->country_id = $request->get('country_id');
         $locality->save();
         return redirect('/locality');
     }
 
     public function destroy(Request $request, $id){
-        Locality::find($id)->destroy();
+        Locality::find($id)->delete();
         return redirect('/locality');
     }
 
