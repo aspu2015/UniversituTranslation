@@ -129,8 +129,8 @@ class UniversityController extends Controller
 
     public function getTranslations()
     {
-        $dictionary = InfoTranslation::getDictionary();
-        return json_encode($dictionary);
+        $info = InfoTranslation::getDictionary();
+        return json_encode($info);
     }
 }
 

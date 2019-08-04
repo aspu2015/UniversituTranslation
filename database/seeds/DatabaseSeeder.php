@@ -198,7 +198,7 @@ class DatabaseSeeder extends Seeder
             'text'=>'ASU - one of the best universities',
             'country' => 'Russia',
             'organization' => 'Budgetary',
-            'locality' => 'Russia',
+            'locality' => 'Astrakhan',
             'site_URL' => 'http://asu.edu.ru/'
         ]);
 
@@ -210,7 +210,7 @@ class DatabaseSeeder extends Seeder
             'text'=>'АГУ- один из лучших университетов в Астрахани',
             'country' => 'Россия',
             'organization' => 'Бюджетная',
-            'locality' => 'Россия',
+            'locality' => 'Астрахань',
             'site_URL' => 'http://asu.edu.ru/'
         ]);
 
@@ -475,6 +475,67 @@ class DatabaseSeeder extends Seeder
             'name'=>'copyright',
             'text'=>'© Copyright 2019 Astrakhan State University'
         ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>1,
+            'name'=>'SiteURL',
+            'text'=>'Адрес сайта'
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>2,
+            'name'=>'SiteURL',
+            'text'=>'Web address'
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>1,
+            'name'=>'orgName',
+            'text'=>'Название'
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>2,
+            'name'=>'orgName',
+            'text'=>'Name'
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>1,
+            'name'=>'filtersName',
+            'text'=>'Фильтры'
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>2,
+            'name'=>'filtersName',
+            'text'=>'Filters'
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>1,
+            'name'=>'tableTitle',
+            'text'=>'Организации'
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>2,
+            'name'=>'tableTitle',
+            'text'=>'Organizations'
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>1,
+            'name'=>'linkMain',
+            'text'=>'Главная'
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>2,
+            'name'=>'linkMain',
+            'text'=>'Main'
+        ]);
+        
         
 
     }

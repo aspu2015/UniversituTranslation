@@ -11,7 +11,7 @@
         <script src="{{ asset('js/libs/bootstrap.js')}}"></script>
         <script src="{{ asset('js/libs/summernote.js')}}"></script>
 
-        <script src="https://api-maps.yandex.com/2.1/?apikey=1f0064eb-6c20-41d7-87b9-c25967a30cd1&lang=ru_RU" type="text/javascript">
+        <script src="https://api-maps.yandex.com/2.1/?apikey=1f0064eb-6c20-41d7-87b9-c25967a30cd1&lang=en_US" type="text/javascript">
         </script>
 
         
@@ -20,7 +20,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/flags.css') }}" />
         <script src="{{ asset('js/langs/jquery.dd.js') }}" type="text/javascript"></script>
         <script src="{{ asset('js/langs/jquery.dd.min.js') }}" type="text/javascript"></script>
-        <!-- <script src="{{ asset('js/langs/info_translations.js')}}"></script> -->
+        <!-- <script src="{{ asset('js/langs/info_translations111.js')}}"></script> -->
         <script src="{{ asset('js/langs/dictionary.js')}}"></script>
 
 
@@ -272,9 +272,7 @@
                 
                 <div id="org"><span id="orgType"></span>
                 <select id="organizationChoice" multiple="multiple">
-                @foreach ($organizations as $item)   
-                    <option value="{{$item->id}}" selected="selected"> {{$item->name}}</option>
-                @endforeach
+                
                 </select>
                 </div>
 
@@ -282,15 +280,13 @@
 
                 <div id="countrych" style="padding-left: 20px;"><span id="countryName"></span>
                 <select id="countryChoice" multiple="multiple">
-                @foreach ($country as $item)   
-                    <option value="{{$item->id}}" selected="selected"> {{$item->name}}</option>
-                @endforeach
+                
                 </select>
                 </div>
 
-                <div id="locality"><span id="localityName"></span>
+                <div id="localitych"><span id="localityName"></span>
                 <select id="localityChoice" multiple="multiple">  
-                    <option value="Любые" selected="selected">Любые</option>
+                    <option value="Любые" selected="selected">Любые1111</option>
                 </select>
                 </div>
 

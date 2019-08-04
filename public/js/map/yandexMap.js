@@ -133,6 +133,7 @@ $(document).ready(function(){
 
             var selectedOrganization = document.querySelectorAll('#org .multiselect-native-select .btn-group'+
             ' ul li[class="active"] a label input[value]');
+            console.log(selectedOrganization);
             var selectedCountry = document.querySelectorAll('#countrych .multiselect-native-select .btn-group'+
             ' ul li[class="active"] a label input[value]');
             var selectedOrgArray = [];
@@ -143,14 +144,13 @@ $(document).ready(function(){
             for (var i = 0; i < selectedCountry.length; i++) {
                 selectedCountryArray.push(+selectedCountry[i].value);
             }
-            //console.log(selectedOrgArray);
-            //console.log(selectedCountryArray);
 
 
             data = JSON.parse(data);
             //console.log(data);            
             let geodata = [];
             for(var i = 0; i < data.features.length; i++){
+                console.log(':',data.features[i].country);
                 if (selectedOrgArray.indexOf(data.features[i].organization) != -1
                 && selectedCountryArray.indexOf(data.features[i].country) != -1) {
                 geodata[i] = new ymaps.Placemark(data.features[i].geometry.coordinates, 

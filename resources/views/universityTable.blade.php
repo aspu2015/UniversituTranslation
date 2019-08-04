@@ -58,6 +58,9 @@
             background-color: #ced2db;
         }
 
+        #webmenu {
+            width: 130px;
+        }
 
     </style>
 
@@ -67,7 +70,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Главная
+                    <span id="linkMain"></span>
                 </a>
                 
                 <div class="choose-lang-div">
@@ -97,7 +100,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Организации</div>
+                <div class="card-header"><span id="tableTitle"></span></div>
                 
 
                 <div class="card-body">
@@ -109,32 +112,39 @@
 
                     <br>
 
-                    <span id="hint">Для выбора группы организаций используйте</span><br>
-                    <div id="filters">Фильтры:</div>
-                    <div id="countrych">Страна
+                    <span id="hint"></span><br>
+                    <div id="filters"><span id="filtersName"></span>:</div>
+                    <div id="countrych"><span id="countryName1"></span>
                         <select id="countryChoice" multiple="multiple">
  
                         </select>
                     </div>
 
-                    <div id="org">Тип организации
+                    <div id="org"><span id="orgType1"></span>
                         <select id="organizationChoice" multiple="multiple">
 
                         </select>
                     </div>
 
+                    <div id="localitych"><span id="localityName1"></span>
+                        <select id="localityChoice" multiple="multiple">
+
+                        </select>
+                    </div>
+
                     <div>
-                        <button class="button" id="accept">Выбрать</button>
+                        <button class="button" id="accept"><span id="applyFilters"></span></button>
                     </div>
 
                     <table class="table table-bordered">
         <thead>
             <tr>
-                <th scope="col">Название</th>
+                <th scope="col"><span id="orgName"></span></th>
                 <!-- <th scope="col">Краткое описание</th> -->
-                <th scope="col">Тип организации</th>
-                <th scope="col">Страна</th>
-                <th scope="col">Адрес сайта</th>
+                <th scope="col"><span id="orgType"></span></th>
+                <th scope="col"><span id="countryName"></span></th>
+                <th scope="col"><span id="localityName"></span></th>
+                <th scope="col"><span id="SiteURL"></span></th>
             </tr>
         </thead>
                 </table>
@@ -142,7 +152,8 @@
                 <script type="text/javascript">
                 $(document).ready(function() {
                     $('#organizationChoice').multiselect({buttonWidth: '150px'});
-                    $('#countryChoice').multiselect({buttonWidth: '150px'});                    
+                    $('#countryChoice').multiselect({buttonWidth: '150px'});  
+                    $('#localityChoice').multiselect({buttonWidth: '150px'});                    
                 });
                 </script>
                     
