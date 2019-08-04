@@ -286,7 +286,7 @@
 
                 <div id="localitych"><span id="localityName"></span>
                 <select id="localityChoice" multiple="multiple">  
-                    <option value="Любые" selected="selected">Любые1111</option>
+                    
                 </select>
                 </div>
 

@@ -15,9 +15,13 @@ class InfoTranslation extends Model
     public static function getDictionary()
     {
         $filterTranslation = DB::select('select translations.*, languages.langName, 
-        languages.picturePath 
-        from translations, languages 
-        where translations.language_id = languages.id');
+        languages.picturePath, 
+        universities.country_id, 
+        universities.organization_id,
+        universities.locality_id 
+        from translations, languages, universities
+        where translations.language_id = languages.id 
+        and universities.id = translations.university_id');
 
         $dictionary = DB::select('select dictionary.*, 
         languages.langName, 

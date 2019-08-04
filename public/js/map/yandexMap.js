@@ -131,18 +131,24 @@ $(document).ready(function(){
             myMap.geoObjects.remove(clusterer); /// удаляем метки перед созданием новых ///
             clusterer.removeAll();
 
+            ///// Мдааааааааааааааа... /////////////////////////////////////////////////
             var selectedOrganization = document.querySelectorAll('#org .multiselect-native-select .btn-group'+
             ' ul li[class="active"] a label input[value]');
-            console.log(selectedOrganization);
             var selectedCountry = document.querySelectorAll('#countrych .multiselect-native-select .btn-group'+
+            ' ul li[class="active"] a label input[value]');
+            var selectedLocality = document.querySelectorAll('#localitych .multiselect-native-select .btn-group'+
             ' ul li[class="active"] a label input[value]');
             var selectedOrgArray = [];
             var selectedCountryArray = [];
+            var selectedLocalityArray = [];
             for (var i = 0; i < selectedOrganization.length; i++) {
                 selectedOrgArray.push(+selectedOrganization[i].value);
             }
             for (var i = 0; i < selectedCountry.length; i++) {
                 selectedCountryArray.push(+selectedCountry[i].value);
+            }
+            for (var i = 0; i < selectedLocality.length; i++) {
+                selectedLocalityArray.push(+selectedLocality[i].value);
             }
 
 
@@ -150,9 +156,10 @@ $(document).ready(function(){
             //console.log(data);            
             let geodata = [];
             for(var i = 0; i < data.features.length; i++){
-                console.log(':',data.features[i].country);
+                //console.log(':',data.features[i]);
                 if (selectedOrgArray.indexOf(data.features[i].organization) != -1
-                && selectedCountryArray.indexOf(data.features[i].country) != -1) {
+                && selectedCountryArray.indexOf(data.features[i].country) != -1 
+                && selectedLocalityArray.indexOf(data.features[i].locality) != -1) {
                 geodata[i] = new ymaps.Placemark(data.features[i].geometry.coordinates, 
                     data.features[i].properties, 
                     {clusterDisableClickZoom: true,

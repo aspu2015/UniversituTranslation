@@ -22,14 +22,16 @@ function getLocalities(options) {
     for (var i = 0; i < selectedCountry.length; i++) {
         selectedCountryArray.push(selectedCountry[i].value);
     }
-
+    console.log(selectedCountryArray);
+    console.log(options);
     for(var v = 0; v < options.length; v++) {
-        if (selectedCountryArray.includes(options[v][2])) {
-            $('#localityChoice').append($('<option value="'+options[v][3]+'" selected="selected">'+options[v][3]+'</option>'));
+        if (selectedCountryArray.includes(String(options[v][5]))) {
+            console.log('Yeah');
+            $('#localityChoice').append($('<option value="'+options[v][6]+'" selected="selected">'+options[v][3]+'</option>'));
         }
     }
-    
-    
+
+    /////////////// пофиксить фильтры ///// убрать привязку к индексам в массиве options ////////////////
 
     $('#localityChoice').multiselect('rebuild');
     
@@ -61,7 +63,7 @@ function onOptionClick(langName){
     
         for(var i =0; i < filtersLangs.length; i++){
             let obj = filtersLangs[i];
-            //console.log(obj);
+/////////////// пофиксить фильтры /////  //////////////// push добавить ключи
             if(obj.langName == langName){
                 for (var j=0; j < 5; j++)       // WTF ?! ///////////////////////
                     if (j == 0) options.push([
@@ -70,6 +72,9 @@ function onOptionClick(langName){
                         obj.organization,
                         obj.country,
                         obj.locality,
+                        obj.organization_id,
+                        obj.country_id,
+                        obj.locality_id,
                         '<a href="'+obj.site_URL+'">'+obj.site_URL+'</a>'
                     ]);
                 
@@ -77,19 +82,17 @@ function onOptionClick(langName){
         }
     
         var filters = [];
-        //console.log(options);
         for (var i = 0; i < options.length; i++) {
-            //console.log(options);
     
-            
+            /////////////// пофиксить фильтры ///// убрать привязку к индексам в массиве options ////////////////
     
             if (!(filters.includes(options[i][1]))) {
-                $('#organizationChoice').append($('<option value="'+options[i][1]+'" selected="selected">'+options[i][1]+'</option>'));
+                $('#organizationChoice').append($('<option value="'+options[i][4]+'" selected="selected">'+options[i][1]+'</option>'));
                 filters.push(options[i][1]);
             }
     
             if (!(filters.includes(options[i][2]))) {
-                $('#countryChoice').append($('<option value="'+options[i][2]+'" selected="selected">'+options[i][2]+'</option>'));
+                $('#countryChoice').append($('<option value="'+options[i][5]+'" selected="selected">'+options[i][2]+'</option>'));
                 filters.push(options[i][2]);
             }
     
@@ -118,10 +121,11 @@ $(document).ready(function(){
     }).done(function(data) {
         //var langs = {}; /////
         var translations = JSON.parse(data);
-        console.log(translations[0]);
+        //console.log(translations[0]);
         langs = translations[0];
 
         filtersLangs = translations[1];
+        //console.log(filtersLangs);
 
         let firstValue = null;
         var names = [];
