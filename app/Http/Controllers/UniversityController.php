@@ -132,5 +132,9 @@ class UniversityController extends Controller
         $info = InfoTranslation::getDictionary();
         return json_encode($info);
     }
+
+    public function getContacts(){
+        return View('/contacts');
+    }
 }
 

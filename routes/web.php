@@ -79,3 +79,5 @@ Route::get('/locality/{id}/edit','LocalityController@edit');
 Route::post('/locality/{id}/update','LocalityController@update');
 Route::post('/locality/{id}/destroy','LocalityController@destroy');
 Route::get('/api/getlocalities', 'LocalityController@getLocalities');
+
+Route::get('/contacts', 'UniversityController@getContacts');

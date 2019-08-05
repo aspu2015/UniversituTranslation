@@ -36,7 +36,7 @@ function getLocalities(options) {
 }
 
 function onOptionClick(langName){
-
+    //window.location.hash = "#!"+langName;
     //$('#webmenu option').setAttribute('hidden', 'hidden');
 
     for(var i =0; i < langs.length; i++){
