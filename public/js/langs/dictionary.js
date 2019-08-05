@@ -22,11 +22,9 @@ function getLocalities(options) {
     for (var i = 0; i < selectedCountry.length; i++) {
         selectedCountryArray.push(selectedCountry[i].value);
     }
-    console.log(selectedCountryArray);
-    console.log(options);
+    
     for(var v = 0; v < options.length; v++) {
         if (selectedCountryArray.includes(String(options[v][5]))) {
-            console.log('Yeah');
             $('#localityChoice').append($('<option value="'+options[v][6]+'" selected="selected">'+options[v][3]+'</option>'));
         }
     }
