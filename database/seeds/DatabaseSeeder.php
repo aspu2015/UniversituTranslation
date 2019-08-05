@@ -101,11 +101,14 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        
-
         DB::table('localities')->insert([
             'country_id'=>'1',
             'name'=>'Астрахань'
+        ]);
+
+        DB::table('localities')->insert([
+            'country_id'=>'2',
+            'name'=>'Азербайджан'
         ]);
 
         
@@ -121,10 +124,10 @@ class DatabaseSeeder extends Seeder
 
         DB::table('universities')->insert([
             'name' => 'ASU3',
-            'description' => 'ASU3 - Astrakhan State University3',
-            'country_id'=>'1',
+            'description' => 'BSU1 - Baku State University',
+            'country_id'=>'2',
             'organization_id'=>'1',
-            'locality_id'=>'1',
+            'locality_id'=>'2',
             'geolocationX'=>46.5362,
             'geolocationY'=>48.0575
         ]);
