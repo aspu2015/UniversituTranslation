@@ -107,9 +107,19 @@
 
                     <br>
 
-                      
-                    
-                    
+                    <div>
+                        <span id="ourContacts" style="font-weight: bold;
+                        font-size: 18px;">Наши контакты:
+                        </span>
+                        <br>
+                        <span id="ContactsInfo" style="font-size: 18px;">
+                            Астраханский государственный университет<br>
+                            Телефон: ...<br>
+                            Электронная почта: ...
+                        </span>
+                    </div>
+
+                             
                 </div>
             </div>
         </div>

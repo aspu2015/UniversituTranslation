@@ -22,11 +22,9 @@ function getLocalities(options) {
     for (var i = 0; i < selectedCountry.length; i++) {
         selectedCountryArray.push(selectedCountry[i].value);
     }
-    console.log(selectedCountryArray);
-    console.log(options);
+    
     for(var v = 0; v < options.length; v++) {
         if (selectedCountryArray.includes(String(options[v][5]))) {
-            console.log('Yeah');
             $('#localityChoice').append($('<option value="'+options[v][6]+'" selected="selected">'+options[v][3]+'</option>'));
         }
     }
@@ -44,9 +42,9 @@ function onOptionClick(langName){
     for(var i =0; i < langs.length; i++){
         let obj = langs[i];
         if(obj.langName == langName){
-            if ($('#'+obj.name).length != 0) {
-                $('#'+obj.name).text("");
-                ($('#'+obj.name)[0]).insertAdjacentHTML('beforeend',obj.text);
+            if ($('#'+obj.tagName).length != 0) {
+                $('#'+obj.tagName).text("");
+                ($('#'+obj.tagName)[0]).insertAdjacentHTML('beforeend',obj.text);
             }
                 
         }
@@ -123,9 +121,9 @@ $(document).ready(function(){
         var translations = JSON.parse(data);
         //console.log(translations[0]);
         langs = translations[0];
-
+   
         filtersLangs = translations[1];
-        //console.log(filtersLangs);
+        
 
         let firstValue = null;
         var names = [];

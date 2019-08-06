@@ -31,11 +31,21 @@
                             @endforeach
                             </select>
                         </div>
+                        
 
                         <div class="form-group">
                             <select name="country_id" class="form-control">
                             <option value="{{$currentCountry->id}}" selected>{{$currentCountry->name}} </option>
                             @foreach ($country as $item)   
+                                <option value="{{$item->id}}"> {{$item->name}}</option>
+                            @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <select name="locality_id" class="form-control">
+                            <option value="{{$currentLocality->id}}" selected>{{$currentLocality->name}} </option>
+                            @foreach ($locality as $item)   
                                 <option value="{{$item->id}}"> {{$item->name}}</option>
                             @endforeach
                             </select>

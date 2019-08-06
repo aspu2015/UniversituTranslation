@@ -304,7 +304,7 @@
                 <br>
                 <div class="contacts" style="margin-top: 20px;">
                 <div class="buttonLink">
-                    <a href="{{ url('/universitytable') }}"><span id="contactInfo"></span></a>
+                    <a href="{{ url('/contacts') }}"><span id="contactInfo"></span></a>
                 </div>
                 </div>
                 <div class="news">

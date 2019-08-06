@@ -66,12 +66,16 @@ class UniversityController extends Controller
         $avalibleCountries = Country::where('id','<>',$currentUniversity->country_id )->get();
         $selectedOrganization = Organization::find($currentUniversity->organization_id);
         $avalibleOrganizations = Organization::where('id','<>',$currentUniversity->organization_id )->get();
+        $selectedLocality = Locality::find($currentUniversity->locality_id);
+        $avalibleLocalities = Locality::where('id','<>',$currentUniversity->locality_id )->get();
         return View('universities.UniversityEdit',[
             'university' => $currentUniversity,
             'organizations' => $avalibleOrganizations,
             'currentOrganisation' => $selectedOrganization,
             'country' => $avalibleCountries,
-            'currentCountry' => $selectedCountry
+            'currentCountry' => $selectedCountry,
+            'locality' => $avalibleLocalities,
+            'currentLocality' => $selectedLocality
         ]);
     }
 

@@ -23,6 +23,14 @@
                                 
                         </div>
                         <div class="form-group">
+                                <label for="langName">Приоритет:<br>Языки с приоритетом 
+                                    1 будут отображаться на главной странице в строку<br>
+                                    С приоритетом 2 - в выпадающем списке</label><br>
+                                1 - <input type="radio"  value="1" class="form-control" id="langPriority" name="langPriority" aria-describedby="descriptionHelp">
+                                2 - <input type="radio" value="2" checked class="form-control" id="langPriority" name="langPriority" aria-describedby="descriptionHelp">
+                                
+                        </div>
+                        <div class="form-group">
                             <label for="langName">Файл для картинки:</label>
                             <input type="file" class="form-control" id="file" name="file" aria-describedby="descriptionHelp" placeholder="Выберите файл " >
                             
