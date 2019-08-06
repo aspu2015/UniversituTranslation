@@ -38,6 +38,8 @@ function getLocalities(options) {
 function onOptionClick(langName){
     //window.location.hash = "#!"+langName;
     //$('#webmenu option').setAttribute('hidden', 'hidden');
+    //history.replaceState({param: 'Value'}, '', '/'+langName);
+    
 
     for(var i =0; i < langs.length; i++){
         let obj = langs[i];
