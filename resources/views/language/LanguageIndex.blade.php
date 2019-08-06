@@ -47,6 +47,10 @@
                             </tr>
                         @endforeach 
                     </table>
+
+                    <script>
+                        console.log($('table').find("tr:gt(0)")[0].cells[3].innerHTML = '');
+                    </script>
                     
                 </div>
             </div>

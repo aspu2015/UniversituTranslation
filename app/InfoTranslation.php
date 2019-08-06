@@ -26,9 +26,11 @@ class InfoTranslation extends Model
         $dictionary = DB::select('select dictionary.*, 
         languages.langName, 
         languages.picturePath, 
-        languages.priority
-        from dictionary, languages 
-        where dictionary.language_id = languages.id');
+        languages.priority,
+        dictionary_values.tagName 
+        from dictionary, languages, dictionary_values 
+        where dictionary.language_id = languages.id 
+        and dictionary.value_id = dictionary_values.id');
 
         $info = [$dictionary, $filterTranslation];
 

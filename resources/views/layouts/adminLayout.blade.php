@@ -48,8 +48,11 @@
                 <a class="navbar-brand" href="{{ url('/locality') }}">
                     Населенные пункты
                 </a>
-                <a class="navbar-brand" href="{{ url('/info_translation') }}">
-                    Переводы
+                <a class="navbar-brand" href="{{ url('/news') }}">
+                    Новости
+                </a>
+                <a class="navbar-brand" href="{{ url('/dictionary') }}">
+                    Словарь
                 </a>
                 
                 

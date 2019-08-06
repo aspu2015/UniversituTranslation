@@ -16,8 +16,9 @@ class CreateLanguagesTable extends Migration
         Schema::create('languages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('langName');
-            $table->string('picturePath');
+            $table->string('picturePath')->default('-');
             $table->string('priority');
+            $table->string('langCode')->default('-');
             $table->timestamps();
         });
     }

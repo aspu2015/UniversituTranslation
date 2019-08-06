@@ -2,3 +2,13 @@
     border-right: 1px solid #ccc;
     padding-right: 15px;
 }
+
+.navbar-light .navbar-brand:hover{
+    color: #2e88db;
+}
+
+.form-group input[type="radio"] {
+    width: 30px;
+    display: inline-block;
+    margin-right: 20px;
+}

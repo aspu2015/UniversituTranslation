@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Dictionary extends Migration
+class DictionaryValues extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class Dictionary extends Migration
      */
     public function up()
     {
-        Schema::create('dictionary', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('language_id');        
-            $table->integer('value_id');
-            $table->text('text');
-
+        Schema::create('dictionary_values', function (Blueprint $table) {
+            $table->bigIncrements('id');        
+            $table->string('value');
+            $table->string('tagName');
         });
     }
 
@@ -29,6 +27,6 @@ class Dictionary extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dictionary');
+        Schema::dropIfExists('dictionary_values');
     }
 }
