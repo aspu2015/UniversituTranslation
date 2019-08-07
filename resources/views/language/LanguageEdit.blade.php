@@ -36,8 +36,8 @@
                                         }
                                     }}
                                     @endphp
-                                1 - <input type="radio"  {{$check}} value="1" class="form-control" id="langPriority" name="langPriority" aria-describedby="descriptionHelp">
-                                2 - <input type="radio" {{$check2}} value="2" class="form-control" id="langPriority" name="langPriority" aria-describedby="descriptionHelp">
+                                1 - <input type="radio"  {{$check}} value="1" class="form-control" name="langPriority" aria-describedby="descriptionHelp">
+                                2 - <input type="radio" {{$check2}} value="2" class="form-control" name="langPriority" aria-describedby="descriptionHelp">
                         </div>
                         <div class="form-group">
                             <label for="langName">Файл для картинки:</label>

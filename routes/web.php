@@ -89,3 +89,10 @@ Route::post('/dictionary/{id}/translation/store', 'DictionaryController@store');
 Route::post('/dictionary/{id}/word/update', 'DictionaryController@update');
 
 Route::get('/news', 'NewsController@index');
+Route::get('/news/create','NewsController@create');
+Route::post('/news/store','NewsController@store');
+Route::get('/news/{id}/edit','NewsController@edit');
+Route::post('/news/{id}/update','NewsController@update');
+Route::post('/news/{id}/destroy', 'NewsController@destroy');
+
+

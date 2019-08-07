@@ -636,6 +636,22 @@ class DatabaseSeeder extends Seeder
             'value'=>'Главная',
             'tagName'=>'linkMain'
         ]);
+
+
+        date_default_timezone_set('Europe/Astrakhan');
+        $mytime = Carbon\Carbon::now();
+
+        DB::table('news')->insert([
+            'title'=>'Новость №1 на Руси',
+            'publicDate'=>$mytime,
+            'published' => 1 
+        ]);
+
+        DB::table('news')->insert([
+            'title'=>'Новость №2 на Руси',
+            'publicDate'=>$mytime,
+            'published' => 2 
+        ]);
         
     }
 }

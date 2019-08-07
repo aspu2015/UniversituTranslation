@@ -48,6 +48,10 @@
                 margin: 0;
             }
 
+            body {
+                /* background-color: #fffff2; */
+            }
+
             .full-height {
                 height: 100vh;
             }

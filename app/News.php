@@ -5,12 +5,17 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
-class Dictionary extends Model
+class News extends Model
 {
     public $timestamps = false;
     
-    protected $table = 'dictionary';  ///// Указываем таблицу ////
+    protected $table = 'news';  ///// Указываем таблицу ////
         protected $fillable = [
-            'text', 'language_id', 'value_id'
+            'title', 'publicDate', 'published'
         ];
+
+
+    public static function getAllNews(){
+        return DB::select('select news.* from news');
+    }
 }

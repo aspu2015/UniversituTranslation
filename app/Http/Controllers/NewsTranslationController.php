@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\News;
-use Carbon\Carbon;
+use App\NewsTranslation;
 use Illuminate\Support\Facades\Auth;
 
 
-class NewsController extends Controller
+class NewsTranslationController extends Controller
 {
     
     public function __construct()
@@ -17,7 +16,7 @@ class NewsController extends Controller
     }
 
     public function index()
-    {   $allNews = News::getAllNews();
+    {   $allNews = NewsTranslation::getAllNews();
         return view('news.index', [
             'news' => $allNews
         ]);
@@ -30,7 +29,7 @@ class NewsController extends Controller
 
     public function store(Request $request){
         $Nowtime = Carbon::now();
-        News::create([
+        NewsTranslation::create([
             'title' => $request->title, 
             'publicDate' => $Nowtime,
             'published' => 2
@@ -39,14 +38,14 @@ class NewsController extends Controller
     }
 
     public function edit($id){
-        $currentNews = News::find($id);
+        $currentNews = NewsTranslation::find($id);
         return View('news.edit',[
             'currentNews' => $currentNews
         ]);
     }
 
     public function update(Request $request, $id){
-        $currentNews = News::find($id);
+        $currentNews = NewsTranslation::find($id);
         $currentNews->published = $request->get('isPublished');
         $currentNews->title = $request->get('title');
         $currentNews->publicDate = $currentNews->publicDate;
@@ -55,7 +54,7 @@ class NewsController extends Controller
     }
 
     public function destroy(Request $request, $id){
-        News::find($id)->delete();
+        NewsTranslation::find($id)->delete();
         return redirect('/news');
     }
     
