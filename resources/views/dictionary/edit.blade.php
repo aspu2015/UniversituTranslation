@@ -38,7 +38,7 @@
                                     {{$item->text}}
                                 </td>
                                 <td style="width: 20%;">
-                                <a href="/dictionary/{{$item->langId}}/word/edit">редактировать</a>
+                                <a href="/dictionary/{{$item->id}}/word/edit">редактировать</a>
                                 </td>
                             </tr>
                         @endforeach 

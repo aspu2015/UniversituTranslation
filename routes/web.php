@@ -86,5 +86,6 @@ Route::get('/dictionary/{id}/edit', 'DictionaryController@edit');
 Route::get('/dictionary/{id}/translation/create', 'DictionaryController@create');
 Route::get('/dictionary/{id}/word/edit', 'DictionaryController@wordEdit');
 Route::post('/dictionary/{id}/translation/store', 'DictionaryController@store');
+Route::post('/dictionary/{id}/word/update', 'DictionaryController@update');
 
-
+Route::get('/news', 'NewsController@index');

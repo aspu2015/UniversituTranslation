@@ -9,6 +9,11 @@ class Dictionary extends Model
 {
     public $timestamps = false;
     
+    protected $table = 'dictionary';  ///// Указываем таблицу ////
+        protected $fillable = [
+            'text', 'language_id', 'value_id'
+        ];
+
     public static function allLanguages(){
         return DB::select('select languages.id, languages.langName
         from languages 
@@ -16,26 +21,33 @@ class Dictionary extends Model
     }
 
     public static function getAllValues($id){ //////////// !!!!! //////////////////
-        return DB::select('select 
+        return DB::select('SELECT 
         dictionary_values.id as value_id, 
         dictionary_values.value, 
         dictionary_values.tagName 
-        from dictionary_values, dictionary, languages 
-        where dictionary_values.id not in( 
-        select value_id from dictionary) 
-        and dictionary.language_id = languages.id 
-        and languages.id = ?',[$id]);
+        FROM dictionary_values WHERE
+        dictionary_values.id NOT IN(SELECT dictionary.value_id 
+        FROM dictionary, languages 
+        WHERE languages.id = dictionary.language_id 
+        AND dictionary.language_id = ?)',[$id]);
     }
 
     public static function getDictionary($id){
         return DB::select('select dictionary.*, 
-        languages.id as langId, languages.langName,
-        dictionary_values.id as value_id, 
+        languages.langName,
         dictionary_values.value, 
         dictionary_values.tagName
         from dictionary, languages, dictionary_values
         where dictionary.language_id = languages.id 
         and dictionary.value_id = dictionary_values.id
         and languages.id = ?',[$id]);
+    }
+
+    public static function getCurrentDictionary($id){
+        return DB::select('select dictionary.*, 
+        dictionary_values.value  
+        from dictionary, dictionary_values 
+        where dictionary.value_id = dictionary_values.id
+        and dictionary.id = ?', [$id]);
     }
 }
