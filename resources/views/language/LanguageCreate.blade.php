@@ -26,8 +26,8 @@
                                 <label for="langName">Приоритет:<br>Языки с приоритетом 
                                     1 будут отображаться на главной странице в строку<br>
                                     С приоритетом 2 - в выпадающем списке</label><br>
-                                1 - <input type="radio"  value="1" class="form-control" id="langPriority" name="langPriority" aria-describedby="descriptionHelp">
-                                2 - <input type="radio" value="2" checked class="form-control" id="langPriority" name="langPriority" aria-describedby="descriptionHelp">
+                                1 - <input type="radio"  value="1" class="form-control" name="langPriority" aria-describedby="descriptionHelp">
+                                2 - <input type="radio" value="2" checked class="form-control" name="langPriority" aria-describedby="descriptionHelp">
                                 
                         </div>
                         <div class="form-group">

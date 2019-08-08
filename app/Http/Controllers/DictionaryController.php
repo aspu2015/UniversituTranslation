@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Dictionary;
+use DB;
 
 class DictionaryController extends Controller
 {
@@ -24,22 +25,20 @@ class DictionaryController extends Controller
 
     public function create($id)
     {
-        $dictionary = Dictionary::getDictionary($id);
         $values = Dictionary::getAllValues($id);
         return view('dictionary.create',[
-            'dictionary' => $dictionary,
+            'currentLanguage' => $id,
             'wordValues' => $values
         ]);
     }
 
     public function store(Request $request, $id)
     {
-        $word = new Dictionary;
-        $word ->language_id = $id;
-        $word ->text = $request->get('wordTranslation');
-        $word ->value_id = $request->get('word_id');
-        $word ->save();
-        return redirect("/dictionary/$id/edit");
+        Dictionary::create([
+        'text' => $request->wordTranslation, 
+        'language_id' => $id,
+        'value_id' => $request->word_id]);
+        return redirect("/dictionary/$id/edit");  /// добавление записи в таблицу ///
     }
 
     public function edit($id)
@@ -53,19 +52,23 @@ class DictionaryController extends Controller
 
     public function wordEdit($id)
     {
-        $currentWord = $id;
+        $word = Dictionary::getCurrentDictionary($id);
         return View('dictionary.wordEdit',[
-            'words' => Dictionary::getDictionary($id),
-            'currentLagnuage' => $currentWord
+            'word' => $word
         ]);
     }
     
-    // public function update(Request $request, $id)
-    // {
-    //     $organization = Organization::find($id);
-    //     $organization->name = $request->get('name');
-    //     $organization->save();
-    //     return redirect('/organization');
-    // }
+    public function update(Request $request, $id)
+    {   $word = Dictionary::getCurrentDictionary($id);
+        $language_id = $word[0]->language_id;
+        $value_id = $word[0]->value_id;
+        DB::table('dictionary')
+            ->where('id', $id)
+            ->update([
+                'language_id' => $language_id,
+                'value_id' => $value_id,
+                'text' => $request->get('translation')]);
+        return redirect("/dictionary/$language_id/edit");
+    }
 
 }

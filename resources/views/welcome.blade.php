@@ -48,6 +48,13 @@
                 margin: 0;
             }
 
+
+
+            body {
+                /* background-color: #fffff2; */
+
+            }
+
             .full-height {
                 height: 100vh;
             }
@@ -88,7 +95,7 @@
 
             .m-b-md {
                 margin-bottom: 10px;
-                margin-top: 600px;
+                margin-top: 100px;
             }
             
             .myhr {
@@ -209,6 +216,20 @@
                 font-size: 16px;
             }
 
+            .newshr {
+                border-top: 3px solid #eee;
+            }
+
+            .newsTitle {
+                font-size: 16px;
+                font-weight: bold;
+                text-align: left;
+            }
+
+            .newsText {
+                text-align: left;
+            }
+
         </style>
     </head>
     <body>
@@ -238,7 +259,7 @@
                 </div>
                 <div id="logoK"><img src="/images/kasp.png" style="width: 70px;
                  display: inline-block;
-                 margin-top: 600px;"></div>
+                 margin-top: 500px;"></div>
                 
                 <div class="languagesField">
                     <span id="ChooseLangSpan" style="font-weight: bold; font-size: 16px;">
@@ -318,20 +339,12 @@
                         <span id="newsTitle"></span>
                     </div>
                        
-                    <hr>
-                <div id="news1" style="padding-right: 20px;">
-                <p style="font-weight: bold; font-size: 16px;"></p>
-                <p>Первый Каспийский Экономический форум состоится 12 августа 2019 года
-                 в Национальной туристической зоне «Аваза» (город Туркменбаши, Туркменистан).</p>
+                    <hr style="border-top: 3px solid #eee;">
 
-                <p>Для участия в работе форума приглашаются делегации прикаспийских государств,
-                 в том числе руководители и члены правительств, главы прибрежных регионов
-                  и руководители региональных исполнительных органов управления,
-                   представители деловых кругов Прикаспийского региона и заинтересованных
-                    стран, научные работники, руководители компаний, осуществляющих
-                     экономическую деятельность на Каспийском море.</p>
+                <div id="news">
+                
                 </div>
-                <hr>
+
                 </div>
                 
                 <div class="footer" style="width: 100%;

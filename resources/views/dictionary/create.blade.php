@@ -14,21 +14,21 @@
                         </div>
                     @endif
                     
-                    <form action="/dictionary/{id}/translation/store" method="POST" enctype="multipart/form-data">
+                    <form action="/dictionary/{{$currentLanguage}}/translation/store" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group">
                             <label for="name">Значение:</label>
                             <select name="word_id" class="form-control">
-                            @foreach ($dictionary as $item)   
+                            @foreach ($wordValues as $item)   
                                 <option value="{{$item->value_id}}"> {{$item->value}}</option>
                             @endforeach
                             </select>
                         </div>
 
                         <div class="form-group">
-                                <label for="Translation">Перевод:</label>
-                                <input type="text" class="form-control" id="Translation" name="Translation" aria-describedby="descriptionHelp" placeholder="Перевод" >
+                                <label for="wordTranslation">Перевод:</label>
+                                <input type="text" class="form-control" id="wordTranslation" name="wordTranslation" aria-describedby="descriptionHelp" placeholder="Перевод" >
                                 
                         </div>
                         

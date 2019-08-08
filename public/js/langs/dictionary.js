@@ -51,6 +51,21 @@ function onOptionClick(langName){
                 
         }
     }
+
+    
+    var news = $('#news div');
+    news.remove();
+
+    for(var i =0; i < newsTranslations.length; i++){
+        let obj = newsTranslations[i];
+        var news_title = obj.news_title;
+        var news_text = obj.news_text;
+        if (obj.langName == langName){
+            $('#news').append($(
+                '<div><span class="newsTitle">'+news_title+'</span><br>'+
+                '<span class="newsText">'+news_text+'</span><hr class="newshr"></div>'));
+        }    
+    }
     ///////////////////////////////////////
     
 
@@ -125,7 +140,8 @@ $(document).ready(function(){
         langs = translations[0];
    
         filtersLangs = translations[1];
-        
+        newsTranslations = translations[2];
+        console.log(newsTranslations);
 
         let firstValue = null;
         var names = [];

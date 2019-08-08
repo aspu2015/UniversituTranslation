@@ -86,5 +86,17 @@ Route::get('/dictionary/{id}/edit', 'DictionaryController@edit');
 Route::get('/dictionary/{id}/translation/create', 'DictionaryController@create');
 Route::get('/dictionary/{id}/word/edit', 'DictionaryController@wordEdit');
 Route::post('/dictionary/{id}/translation/store', 'DictionaryController@store');
+Route::post('/dictionary/{id}/word/update', 'DictionaryController@update');
 
+Route::get('/news', 'NewsController@index');
+Route::get('/news/create','NewsController@create');
+Route::post('/news/store','NewsController@store');
+Route::get('/news/{id}/edit','NewsController@edit');
+Route::post('/news/{id}/update','NewsController@update');
+Route::post('/news/{id}/destroy', 'NewsController@destroy');
 
+Route::get('/news/{id}/translation/create', 'NewsTranslationController@create');
+Route::post('/newsTranslation/{id}/destroy', 'NewsTranslationController@destroy');
+Route::get('/newsTranslation/{id}/edit', 'NewsTranslationController@edit');
+Route::post('/newsTranslation/{id}/update', 'NewsTranslationController@update');
+Route::post('/news/{id}/translation/store', 'NewsTranslationController@store');
