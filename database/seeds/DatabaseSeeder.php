@@ -251,49 +251,6 @@ class DatabaseSeeder extends Seeder
             'site_URL' => 'http://bsu.edu.az/'
         ]);
 
-        
-
-        DB::table('info_category')->insert([
-            'name'=>'Главная'
-        ]);
-
-        DB::table('info_sections')->insert([
-            'category_id' => 1,
-            'name'=>'ИнфоБлок1'
-        ]);
-
-        DB::table('info_sections')->insert([
-            'category_id' => 1,
-            'name'=>'ИнфоБлок2'
-        ]);
-        
-        DB::table('info_translation')->insert([
-            'category_id'=>1,
-            'language_id'=>1,
-            'section_id'=>1,
-            'text'=>'summertime sadness ss su summertime'
-        ]);
-
-        DB::table('info_translation')->insert([
-            'category_id'=>1,
-            'language_id'=>1,
-            'section_id'=>2,
-            'text'=>'Sooooomebody ...'
-        ]);
-
-        DB::table('info_translation')->insert([
-            'category_id'=>1,
-            'language_id'=>2,
-            'section_id'=>1,
-            'text'=>''
-        ]);
-
-        DB::table('info_translation')->insert([
-            'category_id'=>1,
-            'language_id'=>2,
-            'section_id'=>2,
-            'text'=>'САААААМБАДИ ванс толд миии'
-        ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>2,
