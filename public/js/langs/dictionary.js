@@ -60,10 +60,12 @@ function onOptionClick(langName){
         let obj = newsTranslations[i];
         var news_title = obj.news_title;
         var news_text = obj.news_text;
+        if (langName != 'Русский') langName = 'English'; /// костыль - починить. 
+                                          ///          Для всех языков кроме русского новости на английском
         if (obj.langName == langName){
             $('#news').append($(
-                '<div><span class="newsTitle">'+news_title+'</span><br>'+
-                '<span class="newsText">'+news_text+'</span><hr class="newshr"></div>'));
+                '<div class="newsContainer"><div class="newsTitle">'+news_title+'</div><br>'+
+                '<div class="newsText">'+news_text+'</div><hr class="newshr"></div>'));
         }    
     }
     ///////////////////////////////////////

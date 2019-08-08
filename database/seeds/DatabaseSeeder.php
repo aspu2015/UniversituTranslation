@@ -614,7 +614,44 @@ class DatabaseSeeder extends Seeder
             'language_id'=> 2,
             'news_id'=> 1,
             'news_title' => 'Title for news1',
-            'news_text' => 'Text news 1 '
+            'news_text' => 'Text news 1'
+        ]);
+
+        DB::table('news_translation')->insert([
+            'language_id'=> 1,
+            'news_id'=> 1,
+            'news_title' => 'Заголовок новости 1',
+            'news_text' => '<p style="font-family: &quot;Yandex Sans Text Web&quot;,
+             sans-serif; font-size: 15px;">Ряд Тейлора,&nbsp;конечно,
+              масштабирует двойной интеграл. Криволинейный интеграл
+               непосредственно синхронизирует двойной интеграл.
+                Прямоугольная матрица,&nbsp;очевидно,
+                 нейтрализует изоморфный интеграл по ориентированной области,
+                  таким образом сбылась мечта идиота - утверждение полностью доказано.
+                   Открытое множество недоказуемо.</p>'
+        ]);
+
+        DB::table('news_translation')->insert([
+            'language_id'=> 2,
+            'news_id'=> 2,
+            'news_title' => 'Title for news2',
+            'news_text' => 'Text news 2'
+        ]);
+
+        DB::table('news_translation')->insert([
+            'language_id'=> 1,
+            'news_id'=> 2,
+            'news_title' => 'Заголовок новости 2',
+            'news_text' => '<span style="font-family: &quot;Yandex Sans Text Web&quot;,
+             sans-serif; font-size: 15px;">
+             Тройной интеграл транслирует интеграл по поверхности, при этом,
+              вместо 13 можно взять любую другую константу.
+               График функции восстанавливает линейно зависимый критерий интегрируемости,
+                таким образом сбылась мечта идиота - утверждение полностью доказано.
+                 Интеграл Пуассона синхронизирует график функции.
+                  Математическое моделирование однозначно показывает,
+                   что первая производная концентрирует интеграл по ориентированной области,
+                    что неудивительно.</span>'
         ]);
         
     }

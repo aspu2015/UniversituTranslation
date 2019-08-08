@@ -95,7 +95,8 @@
 
             .m-b-md {
                 margin-bottom: 10px;
-                margin-top: 100px;
+                margin-top: 50%;
+                align: right;
             }
             
             .myhr {
@@ -158,10 +159,10 @@
             }
 
             .filters {
-                border-top: 1px dashed black;
+                /* border-top: 1px dashed black; */
                 /* margin-left: auto; */
                 /* margin-right: auto; */
-                width: 85%;
+                width: 100%;
                 height: 100px;
                 font-size: 16px;
                 background-color: #f2f2f2;
@@ -197,11 +198,14 @@
             }
 
             .filtersSubmit {
-                width: 15%;
-                height: 100px;
+                width: 130px;
+                height: 45px;
                 background-color: #3685f4;
                 font-size: 18px;
                 color: white;
+                border-radius: 15px;
+                outline: none;
+                margin-left: 70px;
             }
 
             .filtersSubmit:hover{
@@ -217,7 +221,11 @@
             }
 
             .newshr {
-                border-top: 3px solid #eee;
+                /* border-top: 5px solid #eee; */
+                height: 8px;
+                background-image: linear-gradient(90deg, #6970f9, transparent);
+                border: 0;
+                height: 3px;
             }
 
             .newsTitle {
@@ -229,6 +237,15 @@
             .newsText {
                 text-align: left;
             }
+
+            .newsContainer {
+                margin-left: 200px;
+                margin-right: 200px;
+                padding-right: 30px;
+                padding-top: 10px;
+            }
+
+            
 
         </style>
     </head>
@@ -249,8 +266,8 @@
                 </div>
             @endif -->
 
-            <div class="content">
-                <div class="title m-b-md" style="float: right; padding-right: 70px;">
+            <div class="content" style="width: 100%;">
+                <div class="title m-b-md" style="float: right; padding-right: 15%; position: relative;">
                  <span id="titleSite"></span>
                     <!-- Мультиязычный сайт по совокупности 
                     образовательных, академических, 
@@ -259,7 +276,7 @@
                 </div>
                 <div id="logoK"><img src="/images/kasp.png" style="width: 70px;
                  display: inline-block;
-                 margin-top: 500px;"></div>
+                 margin-top: 50%;"></div>
                 
                 <div class="languagesField">
                     <span id="ChooseLangSpan" style="font-weight: bold; font-size: 16px;">
@@ -310,9 +327,10 @@
                     
                 </select>
                 </div>
+                <button class="filtersSubmit"><span id="applyFilters"></span></button>
 
                 </div>
-                <button class="filtersSubmit"><span id="applyFilters"></span></button>
+                
                 <!-- <div class=""><span id="filterSubmit"></span></div> -->
                 </div>
                 
@@ -323,30 +341,30 @@
 
                 <div id="map" style="width: 100%; height: 400px"></div>
                 <br>
-                <div class="contacts" style="margin-top: 20px;">
+                <div class="contacts" style="margin-top: 40px;">
                 <div class="buttonLink">
                     <a href="{{ url('/contacts') }}"><span id="contactInfo"></span></a>
                 </div>
                 </div>
                 <div class="news">
-                    <div style="margin-top: 20px;
+                    <div style="margin-top: 40px;
                                 font-weight: bold; 
                                 font-size: 24px; 
                                 width: 100%;
                                 height: 80px;
-                                background-color: #f2f2f2;
+                                background-color: #6970f9;
+                                color: white;
                                 padding-top: 20px;">
                         <span id="newsTitle"></span>
                     </div>
                        
-                    <hr style="border-top: 3px solid #eee;">
+                    <br><br>
 
                 <div id="news">
                 
                 </div>
-
                 </div>
-                
+                <br><br>
                 <div class="footer" style="width: 100%;
                                         height: 50px;
                                     background-color: #5b5d61;
