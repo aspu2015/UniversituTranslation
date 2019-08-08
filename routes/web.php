@@ -95,4 +95,8 @@ Route::get('/news/{id}/edit','NewsController@edit');
 Route::post('/news/{id}/update','NewsController@update');
 Route::post('/news/{id}/destroy', 'NewsController@destroy');
 
-
+Route::get('/news/{id}/translation/create', 'NewsTranslationController@create');
+Route::post('/newsTranslation/{id}/destroy', 'NewsTranslationController@destroy');
+Route::get('/newsTranslation/{id}/edit', 'NewsTranslationController@edit');
+Route::post('/newsTranslation/{id}/update', 'NewsTranslationController@update');
+Route::post('/news/{id}/translation/store', 'NewsTranslationController@store');

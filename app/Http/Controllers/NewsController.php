@@ -40,8 +40,10 @@ class NewsController extends Controller
 
     public function edit($id){
         $currentNews = News::find($id);
+        $translations = News::getAllTranslations($id);
         return View('news.edit',[
-            'currentNews' => $currentNews
+            'currentNews' => $currentNews,
+            'translations' => $translations
         ]);
     }
 

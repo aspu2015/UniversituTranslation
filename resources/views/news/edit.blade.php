@@ -38,19 +38,48 @@
                                 Да - <input type="radio"  {{$check}} value="1" class="form-control" name="isPublished" aria-describedby="descriptionHelp">
                                 Нет - <input type="radio" {{$check2}} value="2" class="form-control" name="isPublished" aria-describedby="descriptionHelp">
                         </div>
-                        
-
-                        
-
-                        
-
-
-
-                        
                         <input type="submit" value="Обновить">
                     </form>
                     
-                    
+                    <hr>
+                    Доступные переводы:
+                    <br>
+                        <button class="button" onclick="location.href = '/news/{{$currentNews->id}}/translation/create';" >добавить перевод</button>
+                    <br>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Язык</th>
+                                <th scope="col">Заголовок</th>
+                                <th scope="col">Текст</th>
+                                <th scope="col">Редактировать</th>
+                                <th scope="col">Удалить</th>
+                            </tr>
+                        </thead>
+                        @foreach ($translations as $item)
+                        <tr>
+                            <td>
+                                {{$item->langName}}
+                            </td>
+                            <td>
+                                {{$item->news_title}}
+                            </td>
+                            <td style="width: 40%;">
+                                {{ $item->news_text }}
+                            </td>
+                            <td>
+                                <a href="/newsTranslation/{{$item->id}}/edit">редактировать</a>
+                            </td>
+                            <td>
+                                <form action="/newsTranslation/{{$item->id}}/destroy" method="POST">
+                                    @csrf
+                                    <input type="submit" value = "удалить">
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                        <hr>
+                    </table>
                     
                 </div>
             </div>

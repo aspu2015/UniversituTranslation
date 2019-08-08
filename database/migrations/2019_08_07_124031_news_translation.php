@@ -16,7 +16,8 @@ class NewsTranslation extends Migration
         Schema::create('news_translation', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('language_id');
-            $table->integer('news_id');     
+            $table->integer('news_id');
+            $table->string('news_title');   
             $table->text('news_text');
         });
     }
