@@ -30,12 +30,13 @@ function getLocalities(options) {
     }
 
     /////////////// пофиксить фильтры ///// убрать привязку к индексам в массиве options ////////////////
-
-    $('#localityChoice').multiselect('rebuild');
+    if ($('#localityChoice').length != 0) $('#localityChoice').multiselect('rebuild');
+    
     
 }
 
 function onOptionClick(langName){
+    
     //window.location.hash = "#!"+langName;
     //$('#webmenu option').setAttribute('hidden', 'hidden');
     //history.replaceState({param: 'Value'}, '', '/'+langName);
@@ -56,6 +57,7 @@ function onOptionClick(langName){
     var news = $('#news div');
     news.remove();
 
+
     for(var i =0; i < newsTranslations.length; i++){
         let obj = newsTranslations[i];
         var news_title = obj.news_title;
@@ -67,6 +69,11 @@ function onOptionClick(langName){
                 '<div class="newsContainer"><div class="newsTitle">'+news_title+'</div><br>'+
                 '<div class="newsText">'+news_text+'</div><hr class="newshr"></div>'));
         }    
+    }
+
+    if ($('.news').length != 0  && $('#titleBlock').length) {
+        var heightDiv = $('.news').height() + 360;
+        $('#titleBlock')[0].style.marginTop = heightDiv+"px";
     }
     ///////////////////////////////////////
     
@@ -99,10 +106,11 @@ function onOptionClick(langName){
         }
     
         var filters = [];
+        console.log(options);
         for (var i = 0; i < options.length; i++) {
     
             /////////////// пофиксить фильтры ///// убрать привязку к индексам в массиве options ////////////////
-    
+            
             if (!(filters.includes(options[i][1]))) {
                 $('#organizationChoice').append($('<option value="'+options[i][4]+'" selected="selected">'+options[i][1]+'</option>'));
                 filters.push(options[i][1]);
@@ -115,9 +123,9 @@ function onOptionClick(langName){
     
         }
     
-    
-        $('#organizationChoice').multiselect('rebuild');
-        $('#countryChoice').multiselect('rebuild');
+        if ($('#organizationChoice').length != 0) $('#organizationChoice').multiselect('rebuild');
+        
+        if ($('#countryChoice').length != 0) $('#countryChoice').multiselect('rebuild');
     
         getLocalities(options);
     
@@ -143,15 +151,19 @@ $(document).ready(function(){
    
         filtersLangs = translations[1];
         newsTranslations = translations[2];
-        console.log(newsTranslations);
+        
+ 
 
         let firstValue = null;
         var names = [];
-        $('#webmenu').append($('<option id="earth" selected disabled data-image="/images/earth-icon-2.png"></option>'));
+        if (location.pathname != '/contacts' || location.pathname != '/allTheNews'){
+            $('#webmenu').append($('<option id="earth" selected disabled data-image="/images/earth-icon-2.png"></option>'));
+        }
         for(var i = 0; i < translations[0].length; i++){
             if (!(names.includes(translations[0][i].langName))) {
                 let langName = translations[0][i].langName;
                 let picturePath = translations[0][i].picturePath;
+                // if (location.pathname != '/contacts'){ 
                 if (translations[0][i].priority == '1') {
                     $('.langs').append($('<div value="'+langName+'"><img src="'+picturePath+'">'+langName+'</div>'));
                 }
@@ -159,7 +171,8 @@ $(document).ready(function(){
                     $('#webmenu').append($('<option value="'+langName+'">'+langName+'</option>'));
                     //$('#webmenu').append($('<option value="'+langName+'" data-image="'+picturePath+'">'+langName+'</option>'));
                 }
-
+                // } 
+                // else $('#webmenu').append($('<option value="'+langName+'">'+langName+'</option>'));
                 names.push(translations[0][i].langName);
                         
                 if(firstValue == null)
@@ -167,8 +180,9 @@ $(document).ready(function(){
             }
         }
         
-        onOptionClick($('.langs div[value="Русский"]').attr('value'));
-        
+        if (location.pathname != '/contacts' || location.pathname != '/allTheNews') onOptionClick("Русский");
+        else onOptionClick("English");
+        // $('.langs div[value="Русский"]').attr('value')
 
         $('#webmenu').on('change', function() {
             onOptionClick(this.value);

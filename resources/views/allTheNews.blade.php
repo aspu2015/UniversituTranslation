@@ -160,12 +160,19 @@
                     <br>
 
                     <div>
-                        <span id="ourContacts" style="font-weight: bold;
-                        font-size: 18px;">Наши контакты:
+                        <span id="allTheNews" style="font-weight: bold;
+                        font-size: 18px;">Все объявления:
                         </span>
-                        <br>
-                        <span id="ContactsInfo" style="font-size: 18px;">
-                        </span>
+
+                        
+                       
+                    <br><br>
+
+                <div id="news">
+                
+                </div>
+                </div>
+                <br><br>
                     </div>
 
                              

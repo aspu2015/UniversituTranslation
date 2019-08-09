@@ -13,7 +13,7 @@ class InfoTranslation extends Model
     }
 
     public static function getDictionary()
-    {
+    {   
         $newsTranslations = DB::select(
         'SELECT news_translation.news_title, 
         news_translation.news_text, 
@@ -23,8 +23,7 @@ class InfoTranslation extends Model
         WHERE news.id = news_translation.news_id 
         AND languages.id = news_translation.language_id 
         AND published = 1 
-        ORDER BY publicDate DESC
-        LIMIT 6');
+        ORDER BY publicDate DESC');
 
         $filterTranslation = DB::select('select translations.*, languages.langName, 
         languages.picturePath, 

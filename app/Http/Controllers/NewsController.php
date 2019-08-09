@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\News;
 use Carbon\Carbon;
+use App\InfoTranslation;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -59,6 +60,11 @@ class NewsController extends Controller
     public function destroy(Request $request, $id){
         News::find($id)->delete();
         return redirect('/news');
+    }
+
+    public function showAllTheNews()
+    {
+        return View('allTheNews');
     }
     
 }

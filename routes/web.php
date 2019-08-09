@@ -100,3 +100,5 @@ Route::post('/newsTranslation/{id}/destroy', 'NewsTranslationController@destroy'
 Route::get('/newsTranslation/{id}/edit', 'NewsTranslationController@edit');
 Route::post('/newsTranslation/{id}/update', 'NewsTranslationController@update');
 Route::post('/news/{id}/translation/store', 'NewsTranslationController@store');
+
+Route::get('/allTheNews','NewsController@showAllTheNews');
