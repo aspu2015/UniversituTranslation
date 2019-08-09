@@ -5,6 +5,12 @@
 
     RewriteEngine On
 
+    #Order Deny,Allow
+    #Deny from all
+
+    #Allow from 172.16.14.9
+    
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

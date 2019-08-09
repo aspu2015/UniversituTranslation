@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+	<meta name="yandex-verification" content="3a76a2fa26237702" />
+	<meta name="google-site-verification" content="0k7DAqKVa9rJ4CBGd9g5VB08RVGMQW96d0_58OH4rYw" />
         <title>Multilang</title>
 
         <!-- js -->
