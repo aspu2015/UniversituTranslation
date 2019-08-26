@@ -74,7 +74,7 @@
                 </a>
                 
                 <div class="choose-lang-div">
-                    <p class="chooseLang" >Choose your Language: </p>
+                    <p class="chooseLang" ><span id="ChooseLangSpan"></span></p>
                     <select id="webmenu"  name = "webmenu">
                     
                     </select>
