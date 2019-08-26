@@ -25,3 +25,4 @@ class IpMiddleware
         return $next($request);
     }
 }
+}   
