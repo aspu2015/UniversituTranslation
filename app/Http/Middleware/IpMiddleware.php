@@ -15,7 +15,7 @@ class IpMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if ($request->ip() != "91.202.254.178") {
+        if ($request->ip() != "172.16.2.207") {
             // here instead of checking a single ip address we can do collection of ips
             //address in constant file and check with in_array function
                 return redirect('/');
