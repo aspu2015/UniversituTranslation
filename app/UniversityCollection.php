@@ -29,8 +29,8 @@ class UniversityCollection
                     "coordinates"=> $currentUniversity->getGeometryAsArray()
                 ],
                 "properties"=>[
-                    "balloonContentHeader"=>"<a href='/university/info?id=".$currentUniversity->id."' target='_blank'>".$currentUniversity->name." </a>",
-                    "balloonContentBody" => "<a href='/university/info?id=".$currentUniversity->id."' target='_blank'>".$currentUniversity->description." </a>",
+                    "balloonContentHeader"=>"<a style='color: #335dd4;' href='/university/info?id=".$currentUniversity->id."' target='_blank'>".$currentUniversity->name." </a>",
+                    "balloonContentBody" => "<a style='color: #335dd4;' href='/university/info?id=".$currentUniversity->id."' target='_blank'>".$currentUniversity->description." </a>",
                     "balloonContentFooter" => " ",
                     "clusterCaption" => "<p>".$currentUniversity->name." </p>",
                     "hintContent" => $currentUniversity->name

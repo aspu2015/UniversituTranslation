@@ -71,6 +71,7 @@ function onOptionClick(langName){
         }    
     }
 
+    //////////////////// двигает название ////////////////////////////
     if ($('.news').length != 0  && $('#titleBlock').length) {
         var heightDiv = $('.news').height() + 360;
         $('#titleBlock')[0].style.marginTop = heightDiv+"px";
@@ -106,7 +107,7 @@ function onOptionClick(langName){
         }
     
         var filters = [];
-        console.log(options);
+        // console.log(options);
         for (var i = 0; i < options.length; i++) {
     
             /////////////// пофиксить фильтры ///// убрать привязку к индексам в массиве options ////////////////
@@ -156,6 +157,7 @@ $(document).ready(function(){
 
         let firstValue = null;
         var names = [];
+        function sss(){
         if (location.pathname != '/contacts' || location.pathname != '/allTheNews'){
             $('#webmenu').append($('<option id="earth" selected disabled data-image="/images/earth-icon-2.png"></option>'));
         }
@@ -179,7 +181,18 @@ $(document).ready(function(){
                     firstValue = langName;
             }
         }
+
+
+
+        }
         
+        sss();
+
+
+
+
+
+
         if (location.pathname != '/contacts' || location.pathname != '/allTheNews') onOptionClick("Русский");
         else onOptionClick("English");
         // $('.langs div[value="Русский"]').attr('value')
@@ -189,14 +202,15 @@ $(document).ready(function(){
         });
 
         $('#webmenu').on('click', function() {
-            $('#webmenu option[id="earth"]').attr('hidden', 'hidden');    
+            $('#webmenu option[id="earth"]').attr('hidden', 'hidden');
         });
         
 
 
         $('.langs div').on('click', function() {
             onOptionClick($(this).attr('value'));
-            //onOptionClick(this.value);
+            sss();
+            $("body select[id='webmenu']").msDropDown().data("dd").refresh();
         });
 
 

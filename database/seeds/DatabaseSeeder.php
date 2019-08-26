@@ -534,6 +534,18 @@ class DatabaseSeeder extends Seeder
             'text'=>'Our contacts',
             'value_id'=>19
         ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>1,
+            'text'=>'Все объявления',
+            'value_id'=>20
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>2,
+            'text'=>'All the news',
+            'value_id'=>20
+        ]);
         
         
         DB::table('dictionary_values')->insert([
@@ -631,7 +643,14 @@ class DatabaseSeeder extends Seeder
         DB::table('dictionary_values')->insert([
             'value'=>'Наши контакты',
             'tagName'=>'ourContacts'
-        ]);    
+        ]);
+
+        DB::table('dictionary_values')->insert([
+            'value'=>'Все Объявления',
+            'tagName'=>'allTheNewsLink'
+        ]);
+
+        
 
         date_default_timezone_set('Europe/Astrakhan');
         $mytime = Carbon\Carbon::now();

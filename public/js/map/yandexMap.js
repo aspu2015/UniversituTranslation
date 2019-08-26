@@ -165,7 +165,7 @@ $(document).ready(function(){
                     {clusterDisableClickZoom: true,
                         iconLayout: 'default#image',
                         iconImageHref: 'staticImages/flag.png',
-                        visible: true                       
+                        visible: true                    
                     }); 
 
                     clusterer.add(geodata[i]);

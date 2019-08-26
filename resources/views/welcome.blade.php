@@ -289,7 +289,7 @@
                     <div class="langs"></div>
                     <div class="choose-lang-div">
                         <select id="webmenu"  name = "webmenu">
-                    
+                            
                         </select>
                         <span id="chooseLang"></span>
                     </div>
@@ -367,7 +367,7 @@
                 <div id="news">
                 
                 </div>
-                <br> <a style="font-size: 18px; color: black;" href="{{ url('/allTheNews') }}">Все объявления</a>
+                <br> <a style="font-size: 22px; color: #335dd4;" href="{{ url('/allTheNews') }}"><span id="allTheNewsLink"></span></a>
                 </div>
                 <br><br>
                 <div class="footer" style="width: 100%;

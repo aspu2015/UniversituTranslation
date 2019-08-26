@@ -160,8 +160,8 @@
                     <br>
 
                     <div>
-                        <span id="allTheNews" style="font-weight: bold;
-                        font-size: 18px;">Все объявления:
+                        <span id="allTheNewsLink" style="font-weight: bold;
+                        font-size: 18px;">
                         </span>
 
                         
