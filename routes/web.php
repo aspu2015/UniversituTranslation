@@ -103,4 +103,7 @@ Route::post('/news/{id}/translation/store', 'NewsTranslationController@store');
 
 Route::get('/allTheNews','NewsController@showAllTheNews');
 
-// Route::get('/register')->middleware('ipcheck'); // закрываем регистрацию в админку
+
+ // закрываем регистрацию в админку
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register')->middleware('ipcheck');
+Route::post('register', 'Auth\RegisterController@register')->middleware('ipcheck');

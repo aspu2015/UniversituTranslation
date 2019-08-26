@@ -50,7 +50,8 @@
                                 </div>
                             </div>
                         </div>
-                        @php echo request()->ip(); @endphp
+                        @php  $ip = file_get_contents('https://api.ipify.org');
+                            echo "My public IP address is: " . $ip; @endphp
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

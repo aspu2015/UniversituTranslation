@@ -15,7 +15,8 @@ class IpMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if ($request->ip() != "91.202.254.178") {
+        $ip = file_get_contents('https://api.ipify.org');
+        if ($ip != "91.202.254.178") {
             // here instead of checking a single ip address we can do collection of ips
             //address in constant file and check with in_array function
                 return redirect('/');
