@@ -96,8 +96,8 @@
             }
 
             .m-b-md {
-                margin-bottom: 10px;
-                margin-top: 50%;
+                position: relative;
+                margin-top: 800px;
                 align: right;
             }
             
@@ -231,7 +231,7 @@
             }
 
             .newsTitle {
-                font-size: 16px;
+                font-size: 20px;
                 font-weight: bold;
                 text-align: left;
             }
@@ -267,18 +267,22 @@
                     @endauth
                 </div>
             @endif -->
-
+            
             <div class="content" style="width: 100%;">
-                <div class="title m-b-md" style="float: right; padding-right: 15%; position: relative;">
+            
+                <div id="titleBlock" class="title m-b-md" style="text-align: left; 
+                 margin-bottom: 30px;
+                 position: relative; margin-left: 120px;">
+                 <img src="/images/kasp.png" style="width: 70px;
+                 display: inline-block; float: left; margin-right: 30px;">
                  <span id="titleSite"></span>
                     <!-- Мультиязычный сайт по совокупности 
                     образовательных, академических, 
                     функционально смежных для них организаций
                     Прикаспийских и иных государств -->
+                   
                 </div>
-                <div id="logoK"><img src="/images/kasp.png" style="width: 70px;
-                 display: inline-block;
-                 margin-top: 50%;"></div>
+                
                 
                 <div class="languagesField">
                     <span id="ChooseLangSpan" style="font-weight: bold; font-size: 16px;">
@@ -351,7 +355,7 @@
                 <div class="news">
                     <div style="margin-top: 40px;
                                 font-weight: bold; 
-                                font-size: 24px; 
+                                font-size: 30px; 
                                 width: 100%;
                                 height: 80px;
                                 background-color: #6970f9;
@@ -365,6 +369,7 @@
                 <div id="news">
                 
                 </div>
+                <br> <a style="font-size: 18px; color: black;" href="{{ url('/allTheNews') }}">Все объявления</a>
                 </div>
                 <br><br>
                 <div class="footer" style="width: 100%;

@@ -18,12 +18,13 @@
                     <form action="/university/store" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label for="universityName">Название университета</label>
+                            <label for="universityName">Название организации</label>
                             <input type="text" class="form-control" id="universityName" name="universityName" aria-describedby="nameHelp" placeholder="Введите название " >
                             
                         </div>
 
                         <div class="form-group">
+                            <label for="organization_id">Тип организации</label>
                             <select name="organization_id" class="form-control">
                             @foreach ($organizations as $item)   
                                 <option value="{{$item->id}}"> {{$item->name}}</option>
@@ -32,6 +33,7 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="country_id">Страна</label>
                             <select name="country_id" class="form-control">
                             @foreach ($country as $item)   
                                 <option value="{{$item->id}}"> {{$item->name}}</option>
@@ -40,6 +42,7 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="locality_id">Населенный пункт</label>
                             <select name="locality_id" class="form-control">
                             @foreach ($locality as $item)   
                                 <option value="{{$item->id}}"> {{$item->name}}</option>

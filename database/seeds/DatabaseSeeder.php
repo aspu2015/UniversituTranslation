@@ -118,7 +118,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('localities')->insert([
             'country_id'=>'2',
-            'name'=>'Азербайджан'
+            'name'=>'Баку'
         ]);
 
         
@@ -506,6 +506,35 @@ class DatabaseSeeder extends Seeder
             'text'=>'Main',
             'value_id'=>17
         ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>1,
+            'text'=>'Астраханский государственный университет<br>
+            Телефон: ...<br>
+            Электронная почта: ...',
+            'value_id'=>18
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>2,
+            'text'=>'Astrakhan State University<br>
+            Phone: ...<br>
+            Email: ...',
+            'value_id'=>18
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>1,
+            'text'=>'Наши контакты',
+            'value_id'=>19
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>2,
+            'text'=>'Our contacts',
+            'value_id'=>19
+        ]);
+        
         
         DB::table('dictionary_values')->insert([
             'value'=>'Тип организации',
@@ -594,6 +623,15 @@ class DatabaseSeeder extends Seeder
             'tagName'=>'linkMain'
         ]);
 
+        DB::table('dictionary_values')->insert([
+            'value'=>'Контактные данные',
+            'tagName'=>'ContactsInfo'
+        ]);
+        
+        DB::table('dictionary_values')->insert([
+            'value'=>'Наши контакты',
+            'tagName'=>'ourContacts'
+        ]);    
 
         date_default_timezone_set('Europe/Astrakhan');
         $mytime = Carbon\Carbon::now();

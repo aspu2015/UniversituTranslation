@@ -24,6 +24,7 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="organization_id">Тип организации</label>
                             <select name="organization_id" class="form-control">
                                 <option value="{{$currentOrganisation->id}}" selected>{{$currentOrganisation->name}} </option>
                             @foreach ($organizations as $item)   
@@ -34,6 +35,7 @@
                         
 
                         <div class="form-group">
+                            <label for="country_id">Страна</label>
                             <select name="country_id" class="form-control">
                             <option value="{{$currentCountry->id}}" selected>{{$currentCountry->name}} </option>
                             @foreach ($country as $item)   
@@ -43,6 +45,7 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="locality_id">Населенный пункт</label>
                             <select name="locality_id" class="form-control">
                             <option value="{{$currentLocality->id}}" selected>{{$currentLocality->name}} </option>
                             @foreach ($locality as $item)   
