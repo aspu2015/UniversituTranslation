@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Типы организаций:</div>
+                <div class="card-header">Новости:</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,14 +14,13 @@
                         </div>
                     @endif
                     
-                    <form action="/organization/store" method="POST" enctype="multipart/form-data">
+                    <form action="/news/store" method="POST" enctype="multipart/form-data">
                         @csrf
                         
                         <div class="form-group">
-                                <label for="name">Отображаемый тип организации:</label>
-                                <input type="text" class="form-control" id="name" name="name" aria-describedby="descriptionHelp" placeholder="Введите тип организации" >
-                                
-                        </div>
+                                <label for="title">Заголовок новости:</label>
+                                <input type="text" class="form-control" id="title" name="title" aria-describedby="descriptionHelp" placeholder="Введите заголовок новости" value="" >
+                        </div>                
                         <input type="submit" value="Создать">
                     </form>
                     

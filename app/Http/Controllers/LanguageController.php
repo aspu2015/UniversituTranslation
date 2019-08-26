@@ -38,8 +38,11 @@ class LanguageController extends Controller
     {
         $lang = new Language;
         $lang->langName = $request->get('langName');
-        $filePath = ImageService::saveImage($request,'file');
-        $lang->picturePath =$filePath;
+        if($request->hasFile('file')){
+            $filePath = ImageService::saveImage($request,'file');
+            $lang->picturePath =$filePath;
+        }
+        $lang->priority = $request->get('langPriority');
         $lang->save();
         return redirect('/lang');
     }
@@ -60,6 +63,7 @@ class LanguageController extends Controller
             $lang->picturePath = $name;
         }
         $lang->langName = $request->get("langName");
+        $lang->priority = $request->get('langPriority');
         $lang->save();
         return redirect('/lang');
     }

@@ -40,13 +40,14 @@ function onOptionClick(langName){
 
     for(var i =0; i < filtersLangs.length; i++){
         let obj = filtersLangs[i];
+        console.log(obj);
         if(obj.langName == langName){
-            if ($('#'+obj.name).length != 0) {
-                $('#'+obj.name).text("");
-                ($('#'+obj.name)[0]).insertAdjacentHTML('beforeend',obj.text);
-                if (($('#'+obj.name+'1').length != 0)) {
-                    $('#'+obj.name+'1').text("");
-                    ($('#'+obj.name+'1')[0]).insertAdjacentHTML('beforeend',obj.text);
+            if ($('#'+obj.tagName).length != 0) {
+                $('#'+obj.tagName).text("");
+                ($('#'+obj.tagName)[0]).insertAdjacentHTML('beforeend',obj.text);
+                if (($('#'+obj.tagName+'1').length != 0)) {
+                    $('#'+obj.tagName+'1').text("");
+                    ($('#'+obj.tagName+'1')[0]).insertAdjacentHTML('beforeend',obj.text);
                 }
             }
                 
@@ -65,7 +66,6 @@ function onOptionClick(langName){
 
     for(var i =0; i < langs.length; i++){
         let obj = langs[i];
-        //console.log(obj);
         if(obj.langName == langName){
             for (var j=0; j < 5; j++)       // WTF ?! ///////////////////////
                 if (j == 0) options.push([
@@ -132,7 +132,6 @@ $(document).ready(function(){
     }).done(function(data) {
         //var langs = {}; /////
         var translations = JSON.parse(data);
-        console.log(data);
         langs = translations[0];
 
         filtersLangs = translations[1];

@@ -36,12 +36,16 @@
                         </div>
                         <div class="form-group">
                                 <label for="universityCountry">Населенный пункт:</label>
-                                <input type="text" class="form-control" id="universityLocality" name="universityLocality" aria-describedby="descriptionHelp" placeholder="Населенный пункт " >
+                                <input type="text" class="form-control" id="universityLocality" name="universityLocality" aria-describedby="descriptionHelp" placeholder="Населенный пункт " value="{{$translation->locality}}">
                                 
                         </div>
                         <div class="form-group">
                                 <label for="universityOrganization">Тип организации:</label>
                                 <input type="text" class="form-control" id="universityOrganization" name="universityOrganization" aria-describedby="descriptionHelp" placeholder="Тип организации " value="{{$translation->organization}}">        
+                        </div>
+                        <div class="form-group">
+                                <label for="universityURL">Адрес сайта:</label>
+                                <input type="text" class="form-control" id="universityURL" name="universityURL" aria-describedby="descriptionHelp" placeholder="Адрес сайта " value="{{$translation->site_URL}}">        
                         </div>
                         <div class="form-group">
                                 <label for="universityShortDescription">Краткое описание (таблица университетов):</label>

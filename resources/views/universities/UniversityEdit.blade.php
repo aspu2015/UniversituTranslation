@@ -18,7 +18,7 @@
                     <form action="/university/{{$university->id}}/update" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label for="universityName">Название университета</label>
+                            <label for="universityName">Название Организации</label>
                             <input type="text" class="form-control" id="universityName" name="universityName" aria-describedby="nameHelp" placeholder="Введите название " value="{{$university->name}}">
                             
                         </div>
@@ -31,11 +31,21 @@
                             @endforeach
                             </select>
                         </div>
+                        
 
                         <div class="form-group">
                             <select name="country_id" class="form-control">
                             <option value="{{$currentCountry->id}}" selected>{{$currentCountry->name}} </option>
                             @foreach ($country as $item)   
+                                <option value="{{$item->id}}"> {{$item->name}}</option>
+                            @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <select name="locality_id" class="form-control">
+                            <option value="{{$currentLocality->id}}" selected>{{$currentLocality->name}} </option>
+                            @foreach ($locality as $item)   
                                 <option value="{{$item->id}}"> {{$item->name}}</option>
                             @endforeach
                             </select>

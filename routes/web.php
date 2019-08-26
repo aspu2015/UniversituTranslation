@@ -69,8 +69,7 @@ Route::get('/universitytable', 'UniversityTableController@index')->name('Univers
 Route::get('/api/tableuniversity', 'UniversityTableController@getData')->name('getData');
 
 Route::get('info_translation/', 'UniversityController@getTranslations');
-//Route::get('info_translation/show/{id}', 'InfoTranslationController@show');
-//Route::get('/api/get_translation', 'InfoTranslationController@getTranslations');
+
 
 Route::get('/locality', 'LocalityController@index');
 Route::get('/locality/create','LocalityController@create');
@@ -79,3 +78,25 @@ Route::get('/locality/{id}/edit','LocalityController@edit');
 Route::post('/locality/{id}/update','LocalityController@update');
 Route::post('/locality/{id}/destroy','LocalityController@destroy');
 Route::get('/api/getlocalities', 'LocalityController@getLocalities');
+
+Route::get('/contacts', 'UniversityController@getContacts');
+
+Route::get('/dictionary', 'DictionaryController@index');
+Route::get('/dictionary/{id}/edit', 'DictionaryController@edit');
+Route::get('/dictionary/{id}/translation/create', 'DictionaryController@create');
+Route::get('/dictionary/{id}/word/edit', 'DictionaryController@wordEdit');
+Route::post('/dictionary/{id}/translation/store', 'DictionaryController@store');
+Route::post('/dictionary/{id}/word/update', 'DictionaryController@update');
+
+Route::get('/news', 'NewsController@index');
+Route::get('/news/create','NewsController@create');
+Route::post('/news/store','NewsController@store');
+Route::get('/news/{id}/edit','NewsController@edit');
+Route::post('/news/{id}/update','NewsController@update');
+Route::post('/news/{id}/destroy', 'NewsController@destroy');
+
+Route::get('/news/{id}/translation/create', 'NewsTranslationController@create');
+Route::post('/newsTranslation/{id}/destroy', 'NewsTranslationController@destroy');
+Route::get('/newsTranslation/{id}/edit', 'NewsTranslationController@edit');
+Route::post('/newsTranslation/{id}/update', 'NewsTranslationController@update');
+Route::post('/news/{id}/translation/store', 'NewsTranslationController@store');

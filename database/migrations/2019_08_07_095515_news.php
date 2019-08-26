@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class InfoSections extends Migration
+class News extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class InfoSections extends Migration
      */
     public function up()
     {
-        Schema::create('info_sections', function (Blueprint $table) {
+        Schema::create('news', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('category_id');
-            $table->string('name');
+            $table->string('title');
+            $table->dateTime('publicDate');
+            $table->integer('published');
         });
     }
 
@@ -27,6 +28,6 @@ class InfoSections extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('info_sections');
+        Schema::dropIfExists('news');
     }
 }

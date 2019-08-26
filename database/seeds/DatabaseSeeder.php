@@ -43,69 +43,82 @@ class DatabaseSeeder extends Seeder
         DB::table('languages')->insert([
             'langName'=>'Русский',
             'picturePath'=>'/images/1564554070.png',
-            'priority'=>'1'
+            'priority'=>'1',
+            'langCode'=>'ru'
         ]);
 
         DB::table('languages')->insert([
             'langName'=>'English',
             'picturePath'=>'',
-            'priority'=>'2'
+            'priority'=>'2',
+            'langCode'=>''
         ]);
 
         DB::table('languages')->insert([
             'langName'=>'中文 (Chinese)',
             'picturePath'=>'',
-            'priority'=>'2'
+            'priority'=>'2',
+            'langCode'=>''
         ]);
 
         DB::table('languages')->insert([
             'langName'=>'اللغة العربية (Arabic)',
             'picturePath'=>'',
-            'priority'=>'2'
+            'priority'=>'2',
+            'langCode'=>''
         ]);
 
         DB::table('languages')->insert([
             'langName'=>'Français (French)',
             'picturePath'=>'',
-            'priority'=>'2'
+            'priority'=>'2',
+            'langCode'=>''
         ]);
 
         DB::table('languages')->insert([
             'langName'=>'Español (Spanish)',
             'picturePath'=>'',
-            'priority'=>2
+            'priority'=>'2',
+            'langCode'=>''
         ]);
 
         DB::table('languages')->insert([
             'langName'=>'Azərbaycan dili',
             'picturePath'=>'/images/1564554082.png',
-            'priority'=>'1'
+            'priority'=>'1',
+            'langCode'=>''
         ]);
 
         DB::table('languages')->insert([
             'langName'=>'زبان فارسی',
             'picturePath'=>'/images/1564554096.png',
-            'priority'=>'1'
+            'priority'=>'1',
+            'langCode'=>''
         ]);
 
         DB::table('languages')->insert([
             'langName'=>'Казақша',
             'picturePath'=>'/images/1564554102.png',
-            'priority'=>'1'
+            'priority'=>'1',
+            'langCode'=>''
         ]);
 
         DB::table('languages')->insert([
             'langName'=>'Türkmen dili',
             'picturePath'=>'/images/1564554090.png',
-            'priority'=>'1'
+            'priority'=>'1',
+            'langCode'=>''
         ]);
 
-
-        
 
         DB::table('localities')->insert([
             'country_id'=>'1',
             'name'=>'Астрахань'
+        ]);
+
+        DB::table('localities')->insert([
+            'country_id'=>'2',
+            'name'=>'Азербайджан'
         ]);
 
         
@@ -121,10 +134,10 @@ class DatabaseSeeder extends Seeder
 
         DB::table('universities')->insert([
             'name' => 'ASU3',
-            'description' => 'ASU3 - Astrakhan State University3',
-            'country_id'=>'1',
+            'description' => 'BSU1 - Baku State University',
+            'country_id'=>'2',
             'organization_id'=>'1',
-            'locality_id'=>'1',
+            'locality_id'=>'2',
             'geolocationX'=>46.5362,
             'geolocationY'=>48.0575
         ]);
@@ -238,305 +251,408 @@ class DatabaseSeeder extends Seeder
             'site_URL' => 'http://bsu.edu.az/'
         ]);
 
-        
 
-        DB::table('info_category')->insert([
-            'name'=>'Главная'
-        ]);
-
-        DB::table('info_sections')->insert([
-            'category_id' => 1,
-            'name'=>'ИнфоБлок1'
-        ]);
-
-        DB::table('info_sections')->insert([
-            'category_id' => 1,
-            'name'=>'ИнфоБлок2'
-        ]);
-        
-        DB::table('info_translation')->insert([
-            'category_id'=>1,
-            'language_id'=>1,
-            'section_id'=>1,
-            'text'=>'summertime sadness ss su summertime'
-        ]);
-
-        DB::table('info_translation')->insert([
-            'category_id'=>1,
-            'language_id'=>1,
-            'section_id'=>2,
-            'text'=>'Sooooomebody ...'
-        ]);
-
-        DB::table('info_translation')->insert([
-            'category_id'=>1,
+        DB::table('dictionary')->insert([
             'language_id'=>2,
-            'section_id'=>1,
-            'text'=>'летняя печаааааааль'
-        ]);
-
-        DB::table('info_translation')->insert([
-            'category_id'=>1,
-            'language_id'=>2,
-            'section_id'=>2,
-            'text'=>'САААААМБАДИ ванс толд миии'
+            'text'=>'Type of organization',
+            'value_id'=>1
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>2,
-            'name'=>'orgType',
-            'text'=>'Type of organization'
+            'text'=>'Country',
+            'value_id'=>2
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>1,
+            'text'=>'Тип организации',
+            'value_id'=>1
+        ]);
+
+        DB::table('dictionary')->insert([
+            'language_id'=>1,
+            'text'=>'Страна',
+            'value_id'=>2
+            
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>2,
-            'name'=>'countryName',
-            'text'=>'Country'
+            'text'=>'Language',
+            'value_id'=>3
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>1,
-            'name'=>'orgType',
-            'text'=>'Тип организации'
-        ]);
-
-        DB::table('dictionary')->insert([
-            'language_id'=>1,
-            'name'=>'countryName',
-            'text'=>'Страна'
-        ]);
-
-        DB::table('dictionary')->insert([
-            'language_id'=>2,
-            'name'=>'chooseLang',
-            'text'=>'Language'
-        ]);
-
-        DB::table('dictionary')->insert([
-            'language_id'=>1,
-            'name'=>'chooseLang',
-            'text'=>'Другой язык'
+            'text'=>'Другой язык',
+            'value_id'=>3
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>3,
-            'name'=>'chooseLang',
-            'text'=>'Language'
+            'text'=>'Language',
+            'value_id'=>3
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>4,
-            'name'=>'chooseLang',
-            'text'=>'Language'
+            'text'=>'Language',
+            'value_id'=>3
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>5,
-            'name'=>'chooseLang',
-            'text'=>'Language'
+            'text'=>'Language',
+            'value_id'=>3
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>6,
-            'name'=>'chooseLang',
-            'text'=>'Language'
+            'text'=>'Language',
+            'value_id'=>3
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>7,
-            'name'=>'chooseLang',
-            'text'=>'Language'
+            'text'=>'Language',
+            'value_id'=>3
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>8,
-            'name'=>'chooseLang',
-            'text'=>'Language'
+            'text'=>'Language',
+            'value_id'=>3
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>9,
-            'name'=>'chooseLang',
-            'text'=>'Language'
+            'text'=>'Language',
+            'value_id'=>3
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>10,
-            'name'=>'chooseLang',
-            'text'=>'Language'
+            'text'=>'Language',
+            'value_id'=>3
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>1,
-            'name'=>'allOrganizations',
-            'text'=>'Все организации'
+            'text'=>'Все организации',
+            'value_id'=>4
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>2,
-            'name'=>'allOrganizations',
-            'text'=>'All the organizations'
+            'text'=>'All the organizations',
+            'value_id'=>4
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>1,
-            'name'=>'localityName',
-            'text'=>'Населенные пункты'
+            'text'=>'Населенный пункт',
+            'value_id'=>5
         ]);
         
         DB::table('dictionary')->insert([
             'language_id'=>2,
-            'name'=>'localityName',
-            'text'=>'Localities'
+            'text'=>'Locality',
+            'value_id'=>5
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>1,
-            'name'=>'ChooseLangSpan',
-            'text'=>'Выберите язык'
+            'text'=>'Выберите язык',
+            'value_id'=>6
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>2,
-            'name'=>'ChooseLangSpan',
-            'text'=>'Choose language'
+            'text'=>'Choose language',
+            'value_id'=>6
         ]);
         
         DB::table('dictionary')->insert([
             'language_id'=>1,
-            'name'=>'titleSite',
             'text'=>'<p>Мультиязычный сайт для поддержки единого</p>
-            научно-образовательного пространства Каспийского региона'
+            научно-образовательного пространства Каспийского региона',
+            'value_id'=>7
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>2,
-            'name'=>'titleSite',
             'text'=>'<p>Multilingual site to support a single</p>
-            scientific and educational space of the Caspian region'
+            scientific and educational space of the Caspian region',
+            'value_id'=>7
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>1,
-            'name'=>'hint',
-            'text'=>'Для выбора группы организаций используйте фильтры'
+            'text'=>'Для выбора группы организаций используйте фильтры',
+            'value_id'=>8
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>2,
-            'name'=>'hint',
-            'text'=>'Use filters to select a group of organizations'
+            'text'=>'Use filters to select a group of organizations',
+            'value_id'=>8
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>1,
-            'name'=>'applyFilters',
-            'text'=>'Выбрать'
+            'text'=>'Выбрать',
+            'value_id'=>9
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>2,
-            'name'=>'applyFilters',
-            'text'=>'Choose'
+            'text'=>'Choose',
+            'value_id'=>9
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>1,
-            'name'=>'contactInfo',
-            'text'=>'Контактная информация'
+            'text'=>'Контактная информация',
+            'value_id'=>10
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>2,
-            'name'=>'contactInfo',
-            'text'=>'Contact Information'
+            'text'=>'Contact Information',
+            'value_id'=>10
         ]);
         
         DB::table('dictionary')->insert([
             'language_id'=>1,
-            'name'=>'newsTitle',
-            'text'=>'Объявления'
+            'text'=>'Объявления',
+            'value_id'=>11
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>2,
-            'name'=>'newsTitle',
-            'text'=>'News'
+            'text'=>'News',
+            'value_id'=>11
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>1,
-            'name'=>'copyright',
-            'text'=>'© Copyright 2019 Астраханский государственный университет'
+            'text'=>'© Copyright 2019 Астраханский государственный университет',
+            'value_id'=>12
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>2,
-            'name'=>'copyright',
-            'text'=>'© Copyright 2019 Astrakhan State University'
+            'text'=>'© Copyright 2019 Astrakhan State University',
+            'value_id'=>12
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>1,
-            'name'=>'SiteURL',
-            'text'=>'Адрес сайта'
+            'text'=>'Адрес сайта',
+            'value_id'=>13
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>2,
-            'name'=>'SiteURL',
-            'text'=>'Web address'
+            'text'=>'Web address',
+            'value_id'=>13
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>1,
-            'name'=>'orgName',
-            'text'=>'Название'
+            'text'=>'Название',
+            'value_id'=>14
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>2,
-            'name'=>'orgName',
-            'text'=>'Name'
+            'text'=>'Name',
+            'value_id'=>14
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>1,
-            'name'=>'filtersName',
-            'text'=>'Фильтры'
+            'text'=>'Фильтры',
+            'value_id'=>15
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>2,
-            'name'=>'filtersName',
-            'text'=>'Filters'
+            'text'=>'Filters',
+            'value_id'=>15
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>1,
-            'name'=>'tableTitle',
-            'text'=>'Организации'
+            'text'=>'Организации',
+            'value_id'=>16
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>2,
-            'name'=>'tableTitle',
-            'text'=>'Organizations'
+            'text'=>'Organizations',
+            'value_id'=>16
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>1,
-            'name'=>'linkMain',
-            'text'=>'Главная'
+            'text'=>'Главная',
+            'value_id'=>17
         ]);
 
         DB::table('dictionary')->insert([
             'language_id'=>2,
-            'name'=>'linkMain',
-            'text'=>'Main'
+            'text'=>'Main',
+            'value_id'=>17
         ]);
         
-        
+        DB::table('dictionary_values')->insert([
+            'value'=>'Тип организации',
+            'tagName'=>'orgType'
+        ]);
 
+        DB::table('dictionary_values')->insert([
+            'value'=>'Страна',
+            'tagName'=>'countryName'
+
+        ]);
+
+        DB::table('dictionary_values')->insert([
+            'value'=>'Другой язык',
+            'tagName'=>'chooseLang'
+        ]);
+
+        DB::table('dictionary_values')->insert([
+            'value'=>'Все организации',
+            'tagName'=>'allOrganizations'
+        ]);
+
+        DB::table('dictionary_values')->insert([
+            'value'=>'Населенный пункт',
+            'tagName'=>'localityName'
+        ]);
+
+        DB::table('dictionary_values')->insert([
+            'value'=>'Выберите язык',
+            'tagName'=>'ChooseLangSpan'
+        ]);
+        
+        DB::table('dictionary_values')->insert([
+            'value'=>'<p>Мультиязычный сайт для поддержки единого</p>
+            научно-образовательного пространства Каспийского региона',
+            'tagName'=>'titleSite'
+        ]);
+        
+        DB::table('dictionary_values')->insert([
+            'value'=>'Для выбора группы организаций используйте фильтры',
+            'tagName'=>'hint'
+        ]);
+
+        DB::table('dictionary_values')->insert([
+            'value'=>'Выбрать',
+            'tagName'=>'applyFilters'
+        ]);
+
+        DB::table('dictionary_values')->insert([
+            'value'=>'Контактная информация',
+            'tagName'=>'contactInfo'
+        ]);
+
+        DB::table('dictionary_values')->insert([
+            'value'=>'Объявления',
+            'tagName'=>'newsTitle'
+        ]);
+
+        DB::table('dictionary_values')->insert([
+            'value'=>'© Copyright 2019 Астраханский государственный университет',
+            'tagName'=>'copyright'
+        ]);
+        
+        DB::table('dictionary_values')->insert([
+            'value'=>'Адрес сайта',
+            'tagName'=>'SiteURL'
+        ]);
+
+        DB::table('dictionary_values')->insert([
+            'value'=>'Название',
+            'tagName'=>'orgName'
+        ]);
+
+        DB::table('dictionary_values')->insert([
+            'value'=>'Фильтры',
+            'tagName'=>'filtersName'
+        ]);
+
+        DB::table('dictionary_values')->insert([
+            'value'=>'Организации',
+            'tagName'=>'tableTitle'
+        ]);
+
+        DB::table('dictionary_values')->insert([
+            'value'=>'Главная',
+            'tagName'=>'linkMain'
+        ]);
+
+
+        date_default_timezone_set('Europe/Astrakhan');
+        $mytime = Carbon\Carbon::now();
+
+        DB::table('news')->insert([
+            'title'=>'Новость №1',
+            'publicDate'=>$mytime,
+            'published' => 1 
+        ]);
+
+        DB::table('news')->insert([
+            'title'=>'Новость №2',
+            'publicDate'=>$mytime,
+            'published' => 2 
+        ]);
+
+        DB::table('news_translation')->insert([
+            'language_id'=> 2,
+            'news_id'=> 1,
+            'news_title' => 'Title for news1',
+            'news_text' => 'Text news 1'
+        ]);
+
+        DB::table('news_translation')->insert([
+            'language_id'=> 1,
+            'news_id'=> 1,
+            'news_title' => 'Заголовок новости 1',
+            'news_text' => '<p style="font-family: &quot;Yandex Sans Text Web&quot;,
+             sans-serif; font-size: 15px;">Ряд Тейлора,&nbsp;конечно,
+              масштабирует двойной интеграл. Криволинейный интеграл
+               непосредственно синхронизирует двойной интеграл.
+                Прямоугольная матрица,&nbsp;очевидно,
+                 нейтрализует изоморфный интеграл по ориентированной области,
+                  таким образом сбылась мечта идиота - утверждение полностью доказано.
+                   Открытое множество недоказуемо.</p>'
+        ]);
+
+        DB::table('news_translation')->insert([
+            'language_id'=> 2,
+            'news_id'=> 2,
+            'news_title' => 'Title for news2',
+            'news_text' => 'Text news 2'
+        ]);
+
+        DB::table('news_translation')->insert([
+            'language_id'=> 1,
+            'news_id'=> 2,
+            'news_title' => 'Заголовок новости 2',
+            'news_text' => '<span style="font-family: &quot;Yandex Sans Text Web&quot;,
+             sans-serif; font-size: 15px;">
+             Тройной интеграл транслирует интеграл по поверхности, при этом,
+              вместо 13 можно взять любую другую константу.
+               График функции восстанавливает линейно зависимый критерий интегрируемости,
+                таким образом сбылась мечта идиота - утверждение полностью доказано.
+                 Интеграл Пуассона синхронизирует график функции.
+                  Математическое моделирование однозначно показывает,
+                   что первая производная концентрирует интеграл по ориентированной области,
+                    что неудивительно.</span>'
+        ]);
+        
     }
 }

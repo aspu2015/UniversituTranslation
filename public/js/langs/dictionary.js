@@ -22,11 +22,9 @@ function getLocalities(options) {
     for (var i = 0; i < selectedCountry.length; i++) {
         selectedCountryArray.push(selectedCountry[i].value);
     }
-    console.log(selectedCountryArray);
-    console.log(options);
+    
     for(var v = 0; v < options.length; v++) {
         if (selectedCountryArray.includes(String(options[v][5]))) {
-            console.log('Yeah');
             $('#localityChoice').append($('<option value="'+options[v][6]+'" selected="selected">'+options[v][3]+'</option>'));
         }
     }
@@ -38,18 +36,37 @@ function getLocalities(options) {
 }
 
 function onOptionClick(langName){
-
+    //window.location.hash = "#!"+langName;
     //$('#webmenu option').setAttribute('hidden', 'hidden');
+    //history.replaceState({param: 'Value'}, '', '/'+langName);
+    
 
     for(var i =0; i < langs.length; i++){
         let obj = langs[i];
         if(obj.langName == langName){
-            if ($('#'+obj.name).length != 0) {
-                $('#'+obj.name).text("");
-                ($('#'+obj.name)[0]).insertAdjacentHTML('beforeend',obj.text);
+            if ($('#'+obj.tagName).length != 0) {
+                $('#'+obj.tagName).text("");
+                ($('#'+obj.tagName)[0]).insertAdjacentHTML('beforeend',obj.text);
             }
                 
         }
+    }
+
+    
+    var news = $('#news div');
+    news.remove();
+
+    for(var i =0; i < newsTranslations.length; i++){
+        let obj = newsTranslations[i];
+        var news_title = obj.news_title;
+        var news_text = obj.news_text;
+        if (langName != 'Русский') langName = 'English'; /// костыль - починить. 
+                                          ///          Для всех языков кроме русского новости на английском
+        if (obj.langName == langName){
+            $('#news').append($(
+                '<div class="newsContainer"><div class="newsTitle">'+news_title+'</div><br>'+
+                '<div class="newsText">'+news_text+'</div><hr class="newshr"></div>'));
+        }    
     }
     ///////////////////////////////////////
     
@@ -123,9 +140,10 @@ $(document).ready(function(){
         var translations = JSON.parse(data);
         //console.log(translations[0]);
         langs = translations[0];
-
+   
         filtersLangs = translations[1];
-        //console.log(filtersLangs);
+        newsTranslations = translations[2];
+        console.log(newsTranslations);
 
         let firstValue = null;
         var names = [];

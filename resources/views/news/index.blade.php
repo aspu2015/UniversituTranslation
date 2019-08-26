@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Языки:</div>
+                <div class="card-header">Новости:</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,31 +15,42 @@
                     @endif
                     
                     
-                    <button class="button" onclick="location.href = '/lang/create';" >добавить язык</button>
+                    <button class="button" onclick="location.href = '/news/create';" >
+                        добавить новость
+                    </button>
                     <br>
                     <br>
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th scope="col">Название</th>
-                                <th scope="col">Картинка</th>
+                                <th scope="col">Заголовок новости</th>
+                                <th scope="col">Дата публикации</th>
+                                <th scope="col">Опубликовано</th>
                                 <th scope="col">Редактировать</th>
                                 <th scope="col">Удалить</th>
                             </tr>
                         </thead>
-                        @foreach ($langs as $item)
+                        @foreach ($news as $item)
                             <tr>
                                 <td>
-                                    {{$item->langName}}
+                                    {{$item->title}}
                                 </td>
                                 <td>
-                                    <img class="lang-picture" src="{{$item->picturePath}}" >
+                                    {{$item->publicDate}}
                                 </td>
                                 <td>
-                                <a href="/lang/{{$item->id}}/edit">редактировать</a>
+                                    @php
+                                        $isPublished = '';
+                                        if ($item->published == 1) $isPublished = 'Да';
+                                        else $isPublished = 'Нет';
+                                    @endphp
+                                    {{$isPublished}}
                                 </td>
                                 <td>
-                                    <form action="/lang/{{$item->id}}/destroy" method="POST">
+                                <a href="/news/{{$item->id}}/edit">редактировать</a>
+                                </td>
+                                <td>
+                                    <form action="/news/{{$item->id}}/destroy" method="POST">
                                         @csrf
                                         <input type="submit" value = "удалить">
                                     </form>
@@ -47,10 +58,6 @@
                             </tr>
                         @endforeach 
                     </table>
-
-                    <script>
-                        console.log($('table').find("tr:gt(0)")[0].cells[3].innerHTML = '');
-                    </script>
                     
                 </div>
             </div>
