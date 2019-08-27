@@ -16,10 +16,10 @@ class IpMiddleware
     public function handle($request, Closure $next)
     {
         $ip = file_get_contents('https://api.ipify.org');
-        if ($ip != "91.202.254.178") {
-                return redirect('/');
+        if ($ip == "91.202.254.184" || $ip == "91.202.254.178") {
+            return $next($request);
             }
-        return $next($request);
+        return redirect('/');
     }
 }
    
