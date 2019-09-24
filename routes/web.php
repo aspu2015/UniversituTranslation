@@ -101,7 +101,7 @@ Route::get('/newsTranslation/{id}/edit', 'NewsTranslationController@edit');
 Route::post('/newsTranslation/{id}/update', 'NewsTranslationController@update');
 Route::post('/news/{id}/translation/store', 'NewsTranslationController@store');
 
-Route::get('/allTheNews','TranslationController@showAllTheNews')->middleware('auth');
+Route::get('/allTheNews','UniversityController@showAllTheNews');
 
 
  // закрываем регистрацию в админку

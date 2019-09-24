@@ -161,7 +161,7 @@
 
                     <div>
                         <span id="ourContacts" style="font-weight: bold;
-                        font-size: 18px;">Наши контакты:
+                        font-size: 18px;">
                         </span>
                         <br>
                         <span id="ContactsInfo" style="font-size: 18px;">

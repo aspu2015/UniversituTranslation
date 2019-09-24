@@ -51,7 +51,7 @@
                             </div>
                         </div>
                         @php 
-                            echo file_get_contents('https://api.ipify.org'); 
+                            echo file_get_contents('https://api.ipify.org');
                         @endphp
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">

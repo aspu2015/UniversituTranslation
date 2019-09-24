@@ -61,11 +61,6 @@ class NewsController extends Controller
         News::find($id)->delete();
         return redirect('/news');
     }
-
-    public function showAllTheNews()
-    {
-        return View('allTheNews');
-    }
     
 }
 

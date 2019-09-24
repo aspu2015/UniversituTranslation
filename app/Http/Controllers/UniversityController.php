@@ -140,5 +140,10 @@ class UniversityController extends Controller
     public function getContacts(){
         return View('/contacts');
     }
+
+    public function showAllTheNews()
+    {
+        return View('allTheNews');
+    }
 }
 
